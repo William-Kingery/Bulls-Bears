@@ -10,6 +10,7 @@ export const up = function (knex) {
     });
 };
 
-exports.down = function(knex) {
+export const down = function(knex) {
     return knex.schema.dropTable('users');
 };
+

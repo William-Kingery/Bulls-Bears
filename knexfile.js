@@ -14,3 +14,4 @@ const knexConnection = {
 };
 
 export default knexConnection;
+
