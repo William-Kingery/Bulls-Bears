@@ -3,8 +3,6 @@ export const up = function (knex) {
         table.increments('id').primary();
         table.string('first_name').notNullable();
         table.string('last_name').notNullable();
-        table.string('address');
-        table.string('phone');
         table.string('email').notNullable().unique();
         table.string('password').notNullable();
     });
@@ -13,5 +11,6 @@ export const up = function (knex) {
 export const down = function(knex) {
     return knex.schema.dropTable('user');
 };
+
 
 

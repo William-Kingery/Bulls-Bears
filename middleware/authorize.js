@@ -27,6 +27,8 @@ const authorize = (req, res, next) => {
    
 };
 
+export default authorize;
+
 
 // const bearerTokenString = req.headers.authorization
 // console.log(bearerTokenString)
