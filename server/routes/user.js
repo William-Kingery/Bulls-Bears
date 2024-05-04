@@ -1,6 +1,5 @@
 
 import express from "express";
-import uniqid from "uniqid";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import knex from "knex";
@@ -82,6 +81,7 @@ router.get("/current", async (req, res) => {
     }
 });
 
+
 router.get("/", authorize, async (_req, res) => {
     try {
         const users = await myknex.select("*").from("users")
@@ -90,7 +90,6 @@ router.get("/", authorize, async (_req, res) => {
         res.status(500).json({ message: "Unable to retrieve users data" });
     }
 });
-
 
 
 
