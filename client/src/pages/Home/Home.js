@@ -11,7 +11,7 @@ const Home = () => {
          <Ticker />
          <Calendar/>
       </div>
-    );
+   );
 }
 
 export default Home;
