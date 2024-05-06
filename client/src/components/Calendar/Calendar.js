@@ -1,58 +1,62 @@
 import React, { useState } from "react";
+import "./Calendar.scss"
 
 const Calendar = () => {
-  // Get current date
-  const currentDate = new Date();
-  const [selectedDate, setSelectedDate] = useState(currentDate);
+   const currentDate = new Date();
+   const [selectedDate, setSelectedDate] = useState(currentDate);
 
-  // Function to get number of days in a month
-  const daysInMonth = (date) => {
-    return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-  };
+   const daysInMonth = (date) => {
+      return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+   };
 
-  // Function to get the first day of the month
-  const firstDayOfMonth = (date) => {
-    return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-  };
+   const firstDayOfMonth = (date) => {
+      return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+   };
 
-  // Function to handle date click
-  const handleDateClick = (day) => {
-    setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day));
-  };
+   const handleDateClick = (day) => {
+      setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day));
+   };
 
-  // Generate calendar grid
-  const generateCalendar = () => {
-    const numDays = daysInMonth(selectedDate);
-    const firstDay = firstDayOfMonth(selectedDate);
-    const calendar = [];
+   const changeMonth = (increment) => {
+      setSelectedDate((prevDate) => {
+         const newDate = new Date(prevDate);
+         newDate.setMonth(newDate.getMonth() + increment);
+         return newDate;
+      });
+   };
 
-    // Push empty cells for days before the first day of the month
-    for (let i = 0; i < firstDay; i++) {
-      calendar.push(<div key={`empty-${i}`} className="calendar-cell empty-cell"></div>);
-    }
+   const generateCalendar = () => {
+      const numDays = daysInMonth(selectedDate);
+      const firstDay = firstDayOfMonth(selectedDate);
+      const calendar = [];
 
-    // Push cells for each day in the month
-    for (let day = 1; day <= numDays; day++) {
-      calendar.push(
-        <div
-          key={day}
-          className={`calendar-cell ${selectedDate.getDate() === day ? "selected" : ""}`}
-          onClick={() => handleDateClick(day)}
-        >
-          {day}
-        </div>
+      for (let i = 0; i < firstDay; i++) {
+         calendar.push(<div key={`empty-${i}`} className="calendar__cell calendar__empty"></div>);
+      }
+      for (let day = 1; day <= numDays; day++) {
+         calendar.push(
+         <div
+            key={day}
+            className={`calendar__cell ${selectedDate.getDate() === day ? "calendar__selected" : ""}`}
+            onClick={() => handleDateClick(day)}
+            >
+            {day}
+         </div>
       );
-    }
+      }
+      return calendar;
+   };
 
-    return calendar;
-  };
-
-  return (
-    <div className="calendar">
-      <h2>{selectedDate.toLocaleString("default", { month: "long", year: "numeric" })}</h2>
-      <div className="calendar-grid">{generateCalendar()}</div>
-    </div>
-  );
+   return (
+      <section className="calendar">
+         <div className="calendar__header-cont">
+            <button onClick={() => changeMonth(-1)}>&lt; Prev</button>
+            <h2 className="calendar__header">{selectedDate.toLocaleString("default", { month: "long", year: "numeric" })}</h2>
+            <button onClick={() => changeMonth(1)}>Next &gt;</button>
+         </div>
+         <div className="calendar__grid">{generateCalendar()}</div>
+      </section>
+   );
 };
 
 export default Calendar;
