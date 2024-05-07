@@ -1,34 +1,40 @@
+
 .header {
+   position: relative;
    display: flex;
    justify-content: space-between;
    align-items: center;
    padding: 20px;
    background-color: #333;
    color: #fff;
-
-   &__logo{
+ 
+   &__logo {
       margin: 0;
       font-size: 24px;
+      z-index: 1; 
    }
-
+ 
    &__menu {
+      position: relative;
       display: flex;
       align-items: center;
    }
+ 
    &__hamburger {
       cursor: pointer;
       padding: 5px;
    }
+ 
    &__ham-line {
       width: 25px;
       height: 3px;
       background-color: #fff;
       margin: 4px 0;
    }
-
+ 
    &__dropdown {
       position: absolute;
-      top: 100%;
+      top: calc(100% + 10px);
       right: 0;
       background-color: #333;
       padding: 10px;
@@ -38,30 +44,27 @@
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
    }
-   &__menu.open {
+ 
+   &__dropdown.open {
       opacity: 1;
       visibility: visible;
    }
-
-   &__dropdown-item {
+ 
+   &__dropdown.hidden {
+      opacity: 0;
+      visibility: hidden;
+   }
+ 
+   &__drop-item {
       margin-bottom: 10px;
+   }
+   &__item-link {
       color: #fff;
       text-decoration: none;
       font-size: 16px;
-   }
+   } 
 
-
+  
 }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
