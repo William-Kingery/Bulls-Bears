@@ -2,7 +2,7 @@ import React from 'react';
 import './Futures.scss'
 
 const Futeres = () => {
-      // Stock futures data
+
   const futuresData = [
     { symbol: 'S&P Futures', price: 4200.00 },
     { symbol: 'Dow Futures', price: 34000.00 },

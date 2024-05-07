@@ -1,0 +1,67 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   background-color: #333;
+   color: #fff;
+
+   &__logo{
+      margin: 0;
+      font-size: 24px;
+   }
+
+   &__menu {
+      display: flex;
+      align-items: center;
+   }
+   &__hamburger {
+      cursor: pointer;
+      padding: 5px;
+   }
+   &__ham-line {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+   }
+
+   &__dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #333;
+      padding: 10px;
+      list-style: none;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+   }
+   &__menu.open {
+      opacity: 1;
+      visibility: visible;
+   }
+
+   &__dropdown-item {
+      margin-bottom: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+   }
+
+
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
