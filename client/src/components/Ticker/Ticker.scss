@@ -1,0 +1,8 @@
+.ticker {
+    margin: 1rem;
+
+    &__text {
+        margin-right: 1.25rem;
+        white-space: nowrap;
+    }
+}

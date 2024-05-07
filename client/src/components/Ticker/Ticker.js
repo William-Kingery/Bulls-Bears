@@ -43,13 +43,13 @@ const StockTicker = () => {
    return (
       <Ticker speed={8} mode="smooth" offset="run-in" onMove={handleTickerMove}>
       {() => (
-        <>
+        <section className='ticker'>
           {stocks.map((stock, index) => (
-            <span key={index} style={{ marginRight: "20px", whiteSpace: 'nowrap' }}>
+            <span className='ticker__text' key={index}>
               {stock.symbol}: ${stock.price}
             </span>
           ))}
-        </>
+        </section>
       )}
     </Ticker>
 

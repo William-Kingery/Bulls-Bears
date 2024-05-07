@@ -1,0 +1,32 @@
+
+.futures {
+    margin-bottom: 2rem;
+    &__main-cont {
+        display: flex;
+        justify-content: space-between;
+        // Spacing between grid items
+    }
+    &__container {
+        width: 125px;
+        height: 100px;
+        border: 1px solid rgb(70, 62, 62);
+        padding: 10px;
+        text-align: center;
+        background-color: #fac68c;
+        border-radius: 1.25rem;
+    }
+    &__header {
+        margin: .5rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    &__price {
+        margin: .5rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+
+
+
