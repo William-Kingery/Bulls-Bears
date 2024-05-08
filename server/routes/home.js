@@ -1,17 +1,23 @@
 import express from "express";
+import { snatchData } from "../controller/apidata.js";
 import knex from 'knex';
 import knexfile from '../knexfile.js';
 
 const router = express.Router();
-const myknex = knex(knexfile);
+// const myknex = knex(knexfile);
 
 
 
-router.get("/", (req, res) => {
-   res.status(200).json("Here's the home page");
- })
+router.get("/", async (req, res) => {
+   try {
+      const data = await snatchData();
+      res.json(data);
+   } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ message: 'Internal server error' });
+   }
 
-
+});
 
 
 // router.get('/', async (req, res) => {
