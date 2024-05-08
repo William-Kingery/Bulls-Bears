@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Signin from "../../components/Signin/Signin";
 
 const Signup = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -23,6 +24,7 @@ const Signup = () => {
                 setSuccess(true);
                 setError("");
                 event.target.reset();
+                navigate("/home"); 
             }
  
         } catch (err) {

@@ -7,13 +7,27 @@ const snatchData = async () => {
 
    const API_KEY = process.env.POLY_API_KEY;
    try {
-      const response = await axios.get(`https://api.polygon.io/v3/reference/tickers?type=CS&market=stocks&date=2024-05-07&active=true&limit=1000&sort=market&apiKey=${API_KEY}`);
-      console.log(response.data)
-      return response.data;
+      const response = await axios.get(`https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/2023-01-09?adjusted=true&apiKey=${API_KEY}`);
+      return response.data.results; 
    } catch (error) {
    console.error('Error retrieving stock data:', error);
    throw error;
    }
 };
 
-export { snatchData };
+const indicesData = async () => {
+
+   const API_KEY = process.env.POLY_API_KEY;
+   try {
+      const response = await axios.get(`https://api.polygon.io/v3/reference/tickers?market=indices&active=true&sort=ticker&apiKey=${API_KEY}`);
+      return response.data.results; 
+   } catch (error) {
+   console.error('Error retrieving stock data:', error);
+   throw error;
+   }
+};
+
+export { snatchData, indicesData };
+
+
+

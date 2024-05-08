@@ -20,7 +20,7 @@ const Login = () => {
            );
            console.log(response.data);
            sessionStorage.setItem("token", response.data.token);
-           navigate("/");
+           navigate("/home");
        } catch (error) {
            setError("Something went wrong", error);
        }
