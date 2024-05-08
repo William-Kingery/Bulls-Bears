@@ -26,7 +26,6 @@ const StockTicker = () => {
   }
   
    return (
-      // <Ticker speed={8} mode="smooth" offset="run-in">
       <section className='ticker'>
          <marquee>
             {stocks.map((stock, index) => (
@@ -36,7 +35,7 @@ const StockTicker = () => {
             ))}
          </marquee>
       </section>
-      // </Ticker>
+  
 
    )
 
