@@ -1,5 +1,5 @@
 import express from "express";
-import { snatchData, indicesData } from "../controller/apidata.js";
+import { snatchData, indicesData, earningsData } from "../controller/apidata.js";
 import knex from 'knex';
 import knexfile from '../knexfile.js';
 
@@ -19,6 +19,17 @@ router.get("/stocks", async (req, res) => {
 router.get("/indices", async (req, res) => {
    try {
       const data = await indicesData();
+      res.json(data);
+   } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ message: 'Internal server error' });
+   }
+
+});
+
+router.get("/earnings", async (req, res) => {
+   try {
+      const data = await earningsData();
       res.json(data);
    } catch (error) {
       console.error('Error:', error);
