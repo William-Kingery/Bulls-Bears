@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Popup from "../Popup/Popup";
 import "./Calendar.scss"
 
 const URL = 'http://localhost:8080/'
@@ -8,6 +9,8 @@ const Calendar = () => {
    const currentDate = new Date();
    const [selectedDate, setSelectedDate] = useState(currentDate);
    const [earnings, setEarnings] = useState([]);
+   const [loading, setLoading] = useState(false);
+   const [popupData, setPopupData] = useState(null);
 
    useEffect(() => {
       const earningsData = async (date) => {
@@ -51,6 +54,22 @@ const Calendar = () => {
       });
    };
 
+   const openPopup = (day) => {
+      const earningForDay = earnings.filter((earning) => {
+         const earningDate = new Date(earning.reportDate);
+         return (
+            earningDate.getFullYear() === selectedDate.getFullYear() &&
+            earningDate.getMonth() === selectedDate.getMonth() &&
+            earningDate.getDate() === day
+         );
+      });
+      setPopupData(earningForDay);
+   };
+  
+   const closePopup = () => {
+      setPopupData(null);
+   };
+
    const generateCalendar = () => {
       const numDays = daysInMonth(selectedDate);
       const firstDay = firstDayOfMonth(selectedDate);
@@ -72,12 +91,12 @@ const Calendar = () => {
             className={`calendar__cell ${
                selectedDate.getDate() === day ? "calendar__selected" : ""
             }`}
-            onClick={() => handleDateClick(day)}
+            onClick={() => openPopup(day)}
          >
          {day}
          <div className="earnings">
             {earningsForDay.map((earning, index) => (
-               <div key={index} className="earning">
+               <div key={index} className="calendar__earning-sym">
                   {earning.symbol}
                </div>
             ))}
@@ -96,6 +115,9 @@ const Calendar = () => {
             <button className="calendar__button" onClick={() => changeMonth(1)}>Next &gt;</button>
          </div>
          <div className="calendar__grid">{generateCalendar()}</div>
+         {popupData && (
+            <Popup selectedDate={selectedDate} data={popupData} onClose={closePopup} />
+         )}
       </section>
    );
 };

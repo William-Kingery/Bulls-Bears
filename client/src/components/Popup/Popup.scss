@@ -1,0 +1,73 @@
+@use "../../styles/partials/Mixin.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
+
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 0, 0, 0.5);
+
+   &__cont {
+      background-color: $primary-200;
+      max-height: 37.5rem;
+      width: 30rem; 
+      padding: 1.25rem;
+      border-radius: .3125rem;
+      box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.2);
+   
+   }
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .625rem;
+      color: $text-100;
+   }
+   &__button{
+      height: 35px;
+      width: 75px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $text-300;
+      background-color: $accent-200;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+         background-color: $accent-100;
+         color: $text-200; 
+      }
+     
+       &:focus {
+         outline: none;
+         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); 
+      }
+     
+       &:active {
+         transform: translateY(1px); 
+      }
+   }
+   &__key {
+      color: $text-100;
+      font-weight: 700;
+   }
+   &__content-cont {
+      max-height: 25rem; 
+      overflow-y: auto;
+      color: $text-200;
+      background-color: $bg-200;
+      padding-left: .5rem;
+      padding-top: .5rem;
+      border-radius: .3125rem;
+   }
+}
+ 

@@ -20,6 +20,7 @@
     }
     &__header {
         color: $text-200;
+        margin-top: 2rem;
     }
     &__form {
         display: flex;
@@ -29,9 +30,9 @@
         border: solid .0625rem $accent-200;
         border-radius: .625rem;
         background-color: $bg-200;
-        height: 25rem;
+        
         width: 15rem;
-        margin: 4.5rem 0;
+        margin: 3.5rem 0;
     
     }
       

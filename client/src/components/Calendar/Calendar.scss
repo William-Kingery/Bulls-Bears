@@ -5,7 +5,7 @@
 .calendar {
    font-family: Arial, sans-serif;
    max-width: 680px;
-   margin: 0 auto;
+   margin: 2rem auto;
    &__header-cont {
       display: flex;
       justify-content: space-between;
@@ -20,14 +20,15 @@
       font-size: 16px;
       font-weight: bold;
       text-transform: uppercase;
-      color: #fff;
-      background-color: #4CAF50;
+      color: $text-200;
+      background-color: $primary-200;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       &:hover {
-         background-color: #45a049; 
+         background-color: $accent-200;
+         color: $bg-100; 
       }
      
        &:focus {
@@ -50,22 +51,28 @@
       width: 65px;
       padding: 10px;
       border: 1px solid #ccc;
+      background-color: $bg-100;
       text-align: center;
+      overflow: hidden;
+      cursor: pointer;
       &:hover {
-         background-color: #f0f0f0;
+         background-color: $primary-100;
          box-shadow: 0 0 0 .5px rgba(0, 0, 0, 0.2); 
          color: black;
       }
    }
-   
+   &__earning-sym {
+      color: $text-200;
+      margin-top: .2rem;
+   }
    &__selected {
-      background-color: #45a049;
+      background-color: $accent-200;
       color: white;
-      border-color: #007bff;
+      border-color: .0625rem $primary-200;
       
    }
    &__empty {
-      background-color: #f5f5f5;
+      background-color: $bg-300;
    }
 
 

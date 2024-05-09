@@ -30,19 +30,36 @@
         border: solid .0625rem $accent-200;
         border-radius: .625rem;
         background-color: $bg-200;
-        height: 16.875rem;
         width: 14rem;
         margin: 5.625rem 0;
     
     }
     
     &__button {
-        background-color: $accent-100;
+        background-color: $primary-200;
         border: none;
         color: $text-200;
         border-radius: 5px;
         width: 65%;
         height: 25px;
+        cursor: pointer;
+        transition: background-color 0.4s ease;
+        &:hover {
+            background-color: $accent-200;
+            color: $bg-100; 
+        }
+    }
+    &__message-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__message {
+        margin: 1rem 1rem;
+        color: $text-200;
+        
+       
+        
     }
     &__signup {
         color: $text-200;

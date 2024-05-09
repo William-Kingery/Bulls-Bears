@@ -37,7 +37,9 @@ const Login = () => {
             <Signin type="text" name="email" label="Email" />
             <Signin type="password" name="password" label="Password" />
             <button className="login__button">Log in</button>
-            {error && <div className="login__message">{error}</div>}
+            <div className="login__message-cont">
+               {error && <div className="login__message">There was issue with Email or Password</div>}
+            </div>
             <p className="login__signup">
                Need an account? <Link className="login__signup-link" to="/signup">Sign up</Link>
             </p>
