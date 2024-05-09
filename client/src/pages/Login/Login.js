@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Signin from '../../components/Signin/Signin'
-import './Login.scss'
+import Signin from '../../components/Signin/Signin';
+import './Login.scss';
 
 const Login = () => {
    const [error, setError] = useState("");
@@ -27,18 +27,24 @@ const Login = () => {
    };
 
    return (
-       <main className="login-page">
-           <form className="login" onSubmit={handleSubmit}>
-               <h1 className="login__title">Log in</h1>
-               <Signin type="text" name="email" label="Email" />
-               <Signin type="password" name="password" label="Password" />
-               <button className="login__button">Log in</button>
-               {error && <div className="login__message">{error}</div>}
-           </form>
-           <p>
-               Need an account? <Link to="/signup">Sign up</Link>
-           </p>
-       </main>
+    
+      <main className="login">
+         <header className="login__header-cont">
+            <h1 className="login__title">Bulls & Bears</h1>
+         </header>
+         <form className="login__form" onSubmit={handleSubmit}>
+            <h1 className="login__header">Log in</h1>
+            <Signin type="text" name="email" label="Email" />
+            <Signin type="password" name="password" label="Password" />
+            <button className="login__button">Log in</button>
+            {error && <div className="login__message">{error}</div>}
+            <p className="login__signup">
+               Need an account? <Link className="login__signup-link" to="/signup">Sign up</Link>
+            </p>
+         </form>
+       
+      </main>
+     
    );
 }
 

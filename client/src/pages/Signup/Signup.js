@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Signin from "../../components/Signin/Signin";
+import './Signup.scss';
 
 const Signup = () => {
     const [error, setError] = useState("");
@@ -36,9 +37,12 @@ const Signup = () => {
     };
 
     return (
-        <main className="signup-page">
-            <form className="signup" onSubmit={handleSubmit}>
-                <h1 className="signup__title">Sign up</h1>
+        <main className="signup">
+            <header className="signup__header-cont">
+                <h1 className="signup__title">Bulls & Bears</h1>
+            </header>
+            <form className="signup__form" onSubmit={handleSubmit}>
+                <h1 className="signup__header">Sign up</h1>
                 <Signin
                     type="text"
                     name="first_name"
@@ -63,15 +67,13 @@ const Signup = () => {
                     label="Password"
                     required={true}
                 />
-
-                <button className="signup__button">Sign up</button>
-
-                {success && <div className="signup__message">Signed up!</div>}
-                {error && <div className="signup__message">{error}</div>}
+               <button className="signup__button">Sign up</button>
+               {success && <div className="signup__message">Signed up!</div>}
+               {error && <div className="signup__message">{error}</div>}
+               <p className="signup__login">
+                  Have an account? <Link className="signup__login-link" to="/login">Log in</Link>
+               </p>
             </form>
-            <p>
-                Have an account? <Link to="/login">Log in</Link>
-            </p>
         </main>
     );
 }

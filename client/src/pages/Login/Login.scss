@@ -1,0 +1,54 @@
+@use "../../styles/partials/Mixin.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-100;
+    max-width: 100%;
+    max-height: 100%;
+
+    &__header-cont {
+        display: flex;
+        justify-content: center;
+        background-color: $accent-200;
+        width: 100%;
+        color: $text-100;
+    }
+    &__header {
+        color: $text-200;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid .0625rem $accent-200;
+        border-radius: .625rem;
+        background-color: $bg-200;
+        height: 16.875rem;
+        width: 14rem;
+        margin: 5.625rem 0;
+    
+    }
+    
+    &__button {
+        background-color: $accent-100;
+        border: none;
+        color: $text-200;
+        border-radius: 5px;
+        width: 65%;
+        height: 25px;
+    }
+    &__signup {
+        color: $text-200;
+        margin: 1.5rem 0;
+    }
+    &__singup-link {
+        color: $accent-200;
+    }
+}
