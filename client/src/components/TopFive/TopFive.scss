@@ -1,0 +1,41 @@
+@use "../../styles/partials/Mixin.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
+
+.top {
+    padding: 20px;
+    background-color: $bg-100;
+
+    &__winner-cont {
+        padding-bottom: 1rem;
+        border-bottom: solid .0625rem $accent-200;
+    }
+  
+    &__header {
+      font-size: 1.5rem;
+      color: $text-200;
+      margin: .625rem 0;
+    }
+  
+    &__wul-cont {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    &__lul-cont {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    &__winner {
+      color: green;
+    }
+  
+    &__loser {
+      color: red; 
+      margin-bottom: 5px;
+    }
+}

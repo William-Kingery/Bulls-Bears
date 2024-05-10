@@ -6,6 +6,7 @@ const URL = 'http://localhost:8080/'
 
 const StockTicker = () => {
    const [stocks, setStocks] = useState([]);
+   
 
    useEffect(() => {
       const getStocks = async () => {

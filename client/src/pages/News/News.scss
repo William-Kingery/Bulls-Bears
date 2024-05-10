@@ -2,9 +2,15 @@
 @use "../../styles/partials/Global.scss" as *;
 @use "../../styles/partials/Variables.scss" as *;
 
+.shift {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
 .news {
     padding: 1.25rem;
-    background-color: $bg-200; 
+    background-color: $bg-100; 
   
 
   &__loading {
@@ -14,11 +20,18 @@
     margin-top: 1.25rem; 
   }
   
-  &__container {
-    width: 75%;
+  &__main-container {
+    max-width: 42.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+  }
+  &__container {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: $bg-200;
+    border-radius: .3125rem;
+    padding: 1rem;
+
   }
   
   &__item {

@@ -1,5 +1,5 @@
 import express from "express";
-import { snatchData, indicesData, earningsData } from "../controller/apidata.js";
+import { snatchData, indicesData, earningsData, winnersLosersData } from "../controller/apidata.js";
 
 
 const router = express.Router();
@@ -35,6 +35,15 @@ router.get("/earnings", async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
    }
 
+});
+
+router.get('/topfive', async (req, res) => {
+   try {
+    const { topWinners, topLosers } = await winnersLosersData();
+    res.json({ topWinners, topLosers });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 

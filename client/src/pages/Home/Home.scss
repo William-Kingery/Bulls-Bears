@@ -1,3 +1,9 @@
 @use "../../styles/partials/Mixin.scss" as *;
 @use "../../styles/partials/Global.scss" as *;
 @use "../../styles/partials/Variables.scss" as *;
+
+
+.home__main {
+ display: flex;
+ 
+}
