@@ -49,14 +49,3 @@ export default Futures
 
 
 
-
-
-
-// const futuresData = [
-//    { symbol: 'S&P Futures', price: 4200.00 },
-//    { symbol: 'Dow Futures', price: 34000.00 },
-//    { symbol: 'Nasdaq Futures', price: 14000.00 },
-//    { symbol: 'Gold', price: 1800.00 },
-//    { symbol: 'Bitcoin', price: 60000.00 },
- 
-//  ];

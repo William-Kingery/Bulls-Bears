@@ -1,31 +1,39 @@
+@use "../../styles/partials/Mixin.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
 
 .futures {
     margin-bottom: 2rem;
     &__main-cont {
+        padding: 0 2rem;
         display: flex;
-        margin: 0 1rem;
         justify-content: space-between;
+        background-color: $bg-200;
        
     }
     &__container {
-        width: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         height: 100px;
-        border: 1px solid rgb(70, 62, 62);
-        box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
+        border-right: 1px solid $accent-200;
+        margin: .625rem 0;
+        padding-right: 4rem;
         text-align: center;
-        background-color: #c0f3c1db;
-        border-radius: 1.25rem;
+   
     }
     &__header {
         margin: .5rem;
         font-size: 1rem;
         font-weight: 600;
+        color: $accent-200;
     }
     &__price {
         margin: .5rem;
         font-size: 1rem;
         font-weight: 400;
+        color: $text-200;
     }
 }
 
