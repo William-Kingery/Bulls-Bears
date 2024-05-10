@@ -28,7 +28,7 @@ const Calendar = () => {
             setEarnings(parsedData);
             console.log(parsedData)
           } catch (error) {
-            console.error("Error fetching events:", error);
+            console.error("Error fetching earnings:", error);
          }
         };
         earningsData(selectedDate);
@@ -129,28 +129,3 @@ export default Calendar;
 
 
 
-
-
-
-
-// const generateCalendar = () => {
-//    const numDays = daysInMonth(selectedDate);
-//    const firstDay = firstDayOfMonth(selectedDate);
-//    const calendar = [];
-
-//    for (let i = 0; i < firstDay; i++) {
-//       calendar.push(<div key={`empty-${i}`} className="calendar__cell calendar__empty"></div>);
-//    }
-//    for (let day = 1; day <= numDays; day++) {
-//       calendar.push(
-//       <div
-//          key={day}
-//          className={`calendar__cell ${selectedDate.getDate() === day ? "calendar__selected" : ""}`}
-//          onClick={() => handleDateClick(day)}
-//          >
-//          {day}
-//       </div>
-//    );
-//    }
-//    return calendar;
-// };
