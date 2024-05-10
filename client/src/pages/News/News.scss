@@ -1,3 +1,66 @@
 @use "../../styles/partials/Mixin.scss" as *;
 @use "../../styles/partials/Global.scss" as *;
 @use "../../styles/partials/Variables.scss" as *;
+
+.news {
+    padding: 1.25rem;
+    background-color: $bg-200; 
+  
+
+  &__loading {
+    font-size: 1.5rem;
+    text-align: center;
+    color: $text-100; 
+    margin-top: 1.25rem; 
+  }
+  
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  
+  &__item {
+    background-color: $bg-100;
+    border-radius: .5rem;
+    padding: 1.25rem;
+    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-direction: column;
+  }
+  
+    &__header {
+    font-size: 1.3rem;
+    margin-bottom: .625rem;
+    color: $text-200;
+  }
+  
+  &__header a {
+    color: $accent-200;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  &__header a:hover {
+    text-decoration: underline;
+    color: darken($accent-200, 10%);
+  }
+  
+  &__summary {
+    font-size: 1rem;
+    margin-bottom: .9375rem;
+    color: $text-200; 
+  }
+  
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+    margin-bottom: .9375rem;
+  }
+  
+  &__source {
+    font-size: 0.9rem;
+    color: $text-200; 
+  }
+};

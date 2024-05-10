@@ -40,7 +40,7 @@ const News = () => {
                   <div key={index}>
                      <h2 className='news__header'><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a></h2>
                      <p className='news__summary'>{item.summary}</p>
-                     <img className='news__img' src={item.banner_image} alt="Banner" />
+                     <img className='news__img' src={item.banner_image} alt="image banner" />
                      <p className='news__source'>Source: {item.source_domain}</p>
                   </div>
                ))}
