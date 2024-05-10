@@ -1,7 +1,6 @@
 import express from "express";
 import { snatchData, indicesData, earningsData } from "../controller/apidata.js";
-import knex from 'knex';
-import knexfile from '../knexfile.js';
+
 
 const router = express.Router();
 

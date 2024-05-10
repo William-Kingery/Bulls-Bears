@@ -44,13 +44,13 @@ const newsData = async () => {
       const response = await axios.get(`https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${API_KEY}`)
       return response.data;
    } catch (error) {
-      console.error('Error retrieving earnings data:', error);
+      console.error('Error retrieving news data:', error);
       throw error;   
    }
 };
 
 
-export { snatchData, indicesData, earningsData };
+export { snatchData, indicesData, earningsData, newsData };
 
 
 
