@@ -70,30 +70,35 @@ const newsData = async () => {
       throw error;   
    }
 };
+const winnersLosersData = async () => {
+   const API_KEY = process.env.ALPHA_API_KEY;
 
-export { snatchData, indicesData, earningsData, newsData };
+   try {
+      const response = await axios.get(`https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${API_KEY}`);
+      const topWinners = response.data.top_gainers.map(({ ticker, price, change_amount, change_percentage }) => ({
+       ticker,
+       price,
+       change_amount,
+       change_percentage
+     })).slice(0, 5);
+ 
+     const topLosers = response.data.top_losers.map(({ ticker, price, change_amount, change_percentage }) => ({
+       ticker,
+       price,
+       change_amount,
+       change_percentage
+     })).slice(0, 5);
+     return { topWinners, topLosers };
+   } catch (error) {
+     console.error('Error fetching top winners and losers:', error);
+     throw error;
+   }
+ };
+
+
+
+export { snatchData, indicesData, earningsData, newsData, winnersLosersData };
 
 
 
 
-
-
-// const newsData = async () => {
-//    const API_KEY = process.env.ALPHA_API_KEY;
-//    try {
-//       const response = await axios.get(`https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=${API_KEY}`);
-//       const data = response.data;
-//       const filteredData = data.feed.map(item => ({
-//          title: item.title,
-//          url: item.url,
-//          summary: item.summary,
-//          banner_image: item.banner_image,
-//          source_domain: item.source_domain
-//       }));
-      
-//       return filteredData;
-//    } catch (error) {
-//       console.error('Error retrieving news data:', error);
-//       throw error;   
-//    }
-// };
