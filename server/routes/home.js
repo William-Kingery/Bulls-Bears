@@ -2,7 +2,7 @@ import express from "express";
 import authorize from '../middleware/authorize.js';
 import knex from 'knex';
 import knexConfig from '../knexfile.js';
-import { snatchData, indicesData, earningsData, winnersLosersData } from "../controller/apidata.js";
+import { snatchData, indicesData, earningsData, winnersLosersData, ipoData } from "../controller/apidata.js";
 
 
 const router = express.Router();
@@ -50,6 +50,16 @@ router.get("/earnings", async (req, res) => {
 
 });
 
+router.get("/ipo", async (req, res) => {
+   try {
+      const data = await ipoData();
+      res.json(data);
+   } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ message: 'Internal server error' });
+   }
+
+});
 
 router.get('/topfive', async (req, res) => {
    try {
