@@ -13,12 +13,8 @@ const snatchData = async () => {
          T: stock.T,
          o: stock.o
       }));
-
-       const shuffledStocks = shuffleArray(selectedStocks);
-
-
-       const randomStocks = shuffledStocks.slice(0, 500);
-
+      const shuffledStocks = shuffleArray(selectedStocks);
+      const randomStocks = shuffledStocks.slice(0, 500);
        return randomStocks;
    } catch (error) {
        console.error('Error retrieving stock data:', error);
