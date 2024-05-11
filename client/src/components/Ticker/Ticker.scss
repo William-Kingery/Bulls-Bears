@@ -1,8 +1,17 @@
+@use "../../styles/partials/Mixin.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
+
 .ticker {
     margin: 1rem;
+    background-color: $bg-200;
 
     &__text {
         margin-right: 1.25rem;
         white-space: nowrap;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+       
     }
 }

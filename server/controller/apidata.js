@@ -11,7 +11,9 @@ const snatchData = async () => {
       const allStocks = response.data.results;
       const selectedStocks = allStocks.map(stock => ({
          T: stock.T,
-         o: stock.o
+         o: stock.o,
+         c: stock.c,
+         h: stock.h
       }));
       const shuffledStocks = shuffleArray(selectedStocks);
       const randomStocks = shuffledStocks.slice(0, 500);

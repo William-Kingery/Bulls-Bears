@@ -5,7 +5,10 @@
 
 .top {
     padding: 20px;
-    background-color: $bg-100;
+    background: linear-gradient(to bottom, $bg-300, $bg-200);
+    border-radius: .625rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    height: fit-content;
 
     &__winner-cont {
         padding-bottom: 1rem;
