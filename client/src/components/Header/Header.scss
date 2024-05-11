@@ -13,6 +13,7 @@
    color: $bg-100;
  
    &__logo {
+      padding-left: 30px;
       margin: 0;
       font-size: 24px;
       z-index: 1; 
@@ -26,7 +27,7 @@
  
    &__hamburger {
       cursor: pointer;
-      padding: 5px;
+      padding-right: 30px;
    }
  
    &__ham-line {

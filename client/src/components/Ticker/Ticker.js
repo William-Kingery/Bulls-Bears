@@ -26,6 +26,7 @@ const StockTicker = () => {
    }
 
    const determineColor = (open, close) => {
+      console.log('Open:', open, 'Close:', close);
       return open < close ? 'green' : 'red';
    };
   
@@ -33,10 +34,14 @@ const StockTicker = () => {
       <section className='ticker'>
          <marquee>
             {stocks.map((stock, index) => (
-               <span key={index}
-               className={`ticker__text ${determineColor(stock.o, stock.c)}`}>
-               {stock.T}: ${stock.h}
+            <span key={index}>
+               {stock.T}: $
+               <span
+               className="ticker__text"
+               style={{ color: determineColor(stock.o, stock.c) }}>
+               {stock.h}
                </span>
+            </span>
             ))}
          </marquee>
       </section>
