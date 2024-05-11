@@ -1,4 +1,3 @@
-
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -53,34 +52,33 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign(
         { id: user.id, email: user.email },
         process.env.JWT_KEY,
-        { expiresIn: "24h" }
+        { expiresIn: "1h" }
     );
 
     res.json({ token: token });
     res.status(200);
 });
 
-router.get("/current", async (req, res) => {
-    if (!req.headers.authorization) {
-        return res.status(401).send("Please login");
-    }
-    console.log(req.headers.authorization);
+// router.get("/current", async (req, res) => {
+//     if (!req.headers.authorization) {
+//         return res.status(401).send("Please login");
+//     }
+//     console.log(req.headers.authorization);
 
-    const authHeader = req.headers.authorization;
-    const authToken = authHeader.split(" ")[1];
-    try {
-        const decoded = jwt.verify(authToken, process.env.JWT_KEY);
-        console.log(decoded);
-        const user = await myknex("users").where({ id: decoded.id }).first();
-        delete user.password;
-        res.json(user);
+//     const authHeader = req.headers.authorization;
+//     const authToken = authHeader.split(" ")[1];
+//     try {
+//         const decoded = jwt.verify(authToken, process.env.JWT_KEY);
+//         console.log(decoded);
+//         const user = await myknex("users").where({ id: decoded.id }).first();
+//         delete user.password;
+//         res.json(user);
 
-    } catch (error) {
-        console.log(error);
-        return res.status(401).send("Invalid auth token: ", error);
-    }
-});
-
+//     } catch (error) {
+//         console.log(error);
+//         return res.status(401).send("Invalid auth token: ", error);
+//     }
+// });
 
 router.get("/", authorize, async (_req, res) => {
     try {
@@ -94,3 +92,5 @@ router.get("/", authorize, async (_req, res) => {
 
 
 export default router;
+
+

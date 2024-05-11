@@ -9,7 +9,8 @@
         padding: 0 2rem;
         display: flex;
         justify-content: space-between;
-        background-color: $bg-200;
+        // background-color: $bg-200;
+        background: linear-gradient(to bottom, $bg-300, $bg-200);
        
     }
     &__container {
@@ -17,12 +18,19 @@
         flex-direction: column;
         justify-content: center;
         height: 100px;
-        border-right: 1px solid $accent-200;
+        border: 1px solid $accent-200;
+        border-radius: .5rem;
         margin: .625rem 0;
-        padding-right: 4rem;
+        padding: 0 1.5rem;
         text-align: center;
-   
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        transition: background-color 0.3s ease;
     }
+    &__container:hover {
+        background: linear-gradient(to right, $primary-200, $accent-100);
+    }
+   
+
     &__header {
         margin: .5rem;
         font-size: 1rem;

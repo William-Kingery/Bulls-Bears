@@ -1,9 +1,21 @@
 import express from "express";
+import authorize from '../middleware/authorize.js';
+import knex from 'knex';
+import knexConfig from '../knexfile.js';
 import { snatchData, indicesData, earningsData, winnersLosersData } from "../controller/apidata.js";
 
 
 const router = express.Router();
+const myknex = knex(knexConfig);
 
+router.get("/", authorize, async (_req, res) => {
+   try {
+       const user = await myknex.select("*").from("user");
+       res.json(user);
+   } catch (err) {
+       res.status(500).json({ message: "Unable to retrieve users data" });
+   }
+});
 
 router.get("/stocks", async (req, res) => {
    try {
@@ -15,6 +27,7 @@ router.get("/stocks", async (req, res) => {
    }
 
 });
+
 router.get("/indices", async (req, res) => {
    try {
       const data = await indicesData();
@@ -47,7 +60,12 @@ router.get('/topfive', async (req, res) => {
 });
 
 
-// router.get('/', async (req, res) => {
+
+export default router;
+
+
+
+// router.get('/', authorize, async (req, res) => {
 //    try {
 //       const userHome = await myknex('home')
 //          .join('user', 'user.id')
@@ -58,7 +76,3 @@ router.get('/topfive', async (req, res) => {
 //       res.status(500).json({ error: 'Internal server error' });
 //    }
 // });
-
-
-
-export default router;

@@ -1,3 +1,7 @@
+@use "../../styles/partials/Mixin.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
 
 .header {
    position: relative;
@@ -5,8 +9,8 @@
    justify-content: space-between;
    align-items: center;
    padding: 20px;
-   background-color: #333;
-   color: #fff;
+   background-color: $primary-400;
+   color: $bg-100;
  
    &__logo {
       margin: 0;
@@ -28,7 +32,7 @@
    &__ham-line {
       width: 25px;
       height: 3px;
-      background-color: #fff;
+      background-color: $bg-100;
       margin: 4px 0;
    }
  
@@ -59,7 +63,7 @@
       margin-bottom: 10px;
    }
    &__item-link {
-      color: #fff;
+      color: $bg-100;
       text-decoration: none;
       font-size: 16px;
    } 

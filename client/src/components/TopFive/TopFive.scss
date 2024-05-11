@@ -32,10 +32,11 @@
   
     &__winner {
       color: green;
+      margin-bottom: .3125rem;
     }
   
     &__loser {
       color: red; 
-      margin-bottom: 5px;
+      margin-bottom: .3125rem;
     }
 }

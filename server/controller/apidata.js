@@ -8,11 +8,32 @@ const snatchData = async () => {
    const API_KEY = process.env.POLY_API_KEY;
    try {
       const response = await axios.get(`https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/2023-01-09?adjusted=true&apiKey=${API_KEY}`);
-      return response.data.results; 
+      const allStocks = response.data.results;
+      const selectedStocks = allStocks.map(stock => ({
+         T: stock.T,
+         o: stock.o
+      }));
+
+       const shuffledStocks = shuffleArray(selectedStocks);
+
+
+       const randomStocks = shuffledStocks.slice(0, 500);
+
+       return randomStocks;
    } catch (error) {
-   console.error('Error retrieving stock data:', error);
-   throw error;
+       console.error('Error retrieving stock data:', error);
+       throw error;
    }
+};
+
+// Durstenfeld shuffle
+const shuffleArray = (arr) => {
+   const shuffled = [...arr];
+   for (let i = shuffled.length - 1; i > 0; i--) {
+       const j = Math.floor(Math.random() * (i + 1));
+       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+   }
+   return shuffled;
 };
 
 const indicesData = async () => {
@@ -102,3 +123,10 @@ export { snatchData, indicesData, earningsData, newsData, winnersLosersData };
 
 
 
+// try {
+//    const response = await axios.get(`https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/2023-01-09?adjusted=true&apiKey=${API_KEY}`);
+//    return response.data.results; 
+// } catch (error) {
+// console.error('Error retrieving stock data:', error);
+// throw error;
+// }

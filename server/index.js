@@ -16,8 +16,6 @@ app.use(express.json());
 
 
 app.route("/")
-  .get((req, res) => {res.status(200).json("Houston, we are go for lift off")});
-
   app.use("/user", user);
   app.use('/home', home);
   app.use('/profile', profile);
