@@ -9,8 +9,7 @@
 }
 
 .news {
-    padding: 1.25rem;
-    background-color: $bg-100; 
+    background-color: $bg-200; 
   
 
   &__loading {
@@ -27,11 +26,9 @@
   }
   &__container {
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 1rem;
     background-color: $bg-200;
     border-radius: .3125rem;
-    padding: 1rem;
-
   }
   
   &__item {

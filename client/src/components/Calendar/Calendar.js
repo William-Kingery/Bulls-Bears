@@ -21,8 +21,8 @@ const Calendar = () => {
                },
             });
             const parsedData = response.data.split('\n').slice(1).map(line => {
-               const [symbol, name, reportDate, estimate, currency] = line.split(',');
-               return { symbol, name, reportDate, estimate, currency };
+               const [symbol, name, reportDate,fiscalDateEnding, estimate, currency] = line.split(',');
+               return { symbol, name, reportDate, fiscalDateEnding, estimate, currency };
              });
             setEarnings(parsedData);
             console.log(parsedData)

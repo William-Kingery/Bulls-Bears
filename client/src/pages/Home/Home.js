@@ -3,6 +3,7 @@ import Calendar from "../../components/Calendar/Calendar";
 import Ticker from "../../components/Ticker/Ticker";
 import Futures from "../../components/Futures/Futures";
 import TopFive from "../../components/TopFive/TopFive";
+import IPO from "../../components/Ipo/Ipo";
 import "./Home.scss"
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <TopFive />
             <Calendar />
          </div>
+         <IPO />
       </main>
    );
 }

@@ -4,42 +4,43 @@
 
 
 .top {
-    padding: 20px;
-    background: linear-gradient(to bottom, $bg-300, $bg-200);
-    border-radius: .625rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    height: fit-content;
+   padding: 1.25rem;
+   background: linear-gradient(to bottom, $bg-300, $bg-200);
+   border-radius: .625rem;
+   box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1); 
+   height: fit-content;
+   margin-right: 1rem;
 
-    &__winner-cont {
-        padding-bottom: 1rem;
-        border-bottom: solid .0625rem $accent-200;
-    }
+   &__winner-cont {
+      padding-bottom: 1rem;
+      border-bottom: solid .0625rem $accent-200;
+   }
   
-    &__header {
+   &__header {
       font-size: 1.5rem;
       color: $text-200;
       margin: .625rem 0;
-    }
+   }
   
-    &__wul-cont {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    &__lul-cont {
+   &__wul-cont {
       list-style-type: none;
       padding: 0;
       margin: 0;
-    }
+   }
+    
+   &__lul-cont {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+   }
   
-    &__winner {
+   &__winner {
       color: green;
       margin-bottom: .3125rem;
-    }
+   }
   
-    &__loser {
+   &__loser {
       color: red; 
       margin-bottom: .3125rem;
-    }
+   }
 }

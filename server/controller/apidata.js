@@ -129,14 +129,3 @@ const ipoData = async () => {
 
 
 export { snatchData, indicesData, earningsData, newsData, winnersLosersData, ipoData };
-
-
-
-
-// try {
-//    const response = await axios.get(`https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/2023-01-09?adjusted=true&apiKey=${API_KEY}`);
-//    return response.data.results; 
-// } catch (error) {
-// console.error('Error retrieving stock data:', error);
-// throw error;
-// }
