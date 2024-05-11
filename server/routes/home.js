@@ -50,6 +50,7 @@ router.get("/earnings", async (req, res) => {
 
 });
 
+
 router.get('/topfive', async (req, res) => {
    try {
     const { topWinners, topLosers } = await winnersLosersData();

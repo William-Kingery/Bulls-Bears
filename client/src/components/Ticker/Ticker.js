@@ -12,7 +12,6 @@ const StockTicker = () => {
          try {
             const response = await axios.get(`${URL}home/stocks`);
             setStocks(response.data);
-            console.log(response.data)
          } catch (error) {
             console.error('Error fetching stocks:', error);
          }
@@ -26,7 +25,6 @@ const StockTicker = () => {
    }
 
    const determineColor = (open, close) => {
-      console.log('Open:', open, 'Close:', close);
       return open < close ? 'green' : 'red';
    };
   

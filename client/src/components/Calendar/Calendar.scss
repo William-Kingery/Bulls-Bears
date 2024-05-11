@@ -5,7 +5,7 @@
 .calendar {
    font-family: Arial, sans-serif;
    max-width: 50rem;
-   margin: 0rem auto;
+   margin: 0rem auto 2rem auto;
    &__header-cont {
       display: flex;
       justify-content: space-between;
@@ -40,6 +40,13 @@
          transform: translateY(1px); 
       }
    }
+   &__day-cont {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+   }
+  
    &__grid {
       display: grid;
       width: 100%;

@@ -9,7 +9,6 @@ const Calendar = () => {
    const currentDate = new Date();
    const [selectedDate, setSelectedDate] = useState(currentDate);
    const [earnings, setEarnings] = useState([]);
-   const [loading, setLoading] = useState(false);
    const [popupData, setPopupData] = useState(null);
 
    useEffect(() => {
@@ -22,8 +21,8 @@ const Calendar = () => {
                },
             });
             const parsedData = response.data.split('\n').slice(1).map(line => {
-               const [symbol, name, reportDate, fiscalDateEnding, estimate, currency] = line.split(',');
-               return { symbol, name, reportDate, fiscalDateEnding, estimate, currency };
+               const [symbol, name, reportDate, estimate, currency] = line.split(',');
+               return { symbol, name, reportDate, estimate, currency };
              });
             setEarnings(parsedData);
             console.log(parsedData)
@@ -40,10 +39,6 @@ const Calendar = () => {
 
    const firstDayOfMonth = (date) => {
       return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-   };
-
-   const handleDateClick = (day) => {
-      setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day));
    };
 
    const changeMonth = (increment) => {
@@ -69,12 +64,21 @@ const Calendar = () => {
    const closePopup = () => {
       setPopupData(null);
    };
+   
+   const generateHeader = () => {
+      const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      return daysOfWeek.map(day => (
+         <div key={day} className="calendar__day-header">
+            {day}
+         </div>
+      ));
+   };
 
    const generateCalendar = () => {
       const numDays = daysInMonth(selectedDate);
       const firstDay = firstDayOfMonth(selectedDate);
       const calendar = [];
-  
+
       for (let i = 0; i < firstDay; i++) {
          calendar.push(<div key={`empty-${i}`} className="calendar__cell calendar__empty"></div>);
       }
@@ -114,6 +118,7 @@ const Calendar = () => {
                <h2 className="calendar__header">{selectedDate.toLocaleString("default", { month: "long", year: "numeric" })}</h2>
             <button className="calendar__button" onClick={() => changeMonth(1)}>Next &gt;</button>
          </div>
+         <div key="header" className="calendar__day-cont">{generateHeader()}</div>
          <div className="calendar__grid">{generateCalendar()}</div>
          {popupData && (
             <Popup selectedDate={selectedDate} data={popupData} onClose={closePopup} />
