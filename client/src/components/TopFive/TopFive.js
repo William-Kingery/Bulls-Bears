@@ -34,7 +34,7 @@ const TopFive = () => {
             <h2 className='top__header'>Top 5 Winners</h2>
             <ul className='top__wul-cont'>
                {topWinners.map((winner, index) => (
-                  <li className='top__winner' key={index}>{winner.ticker}: ${winner.price} ({winner.change_percentage})</li>
+                  <li className='top__winner' key={index}><h3 className='top__ticker'>{winner.ticker}:</h3> ${winner.price} ({winner.change_percentage})</li>
                ))}
             </ul>
          </div>
@@ -42,7 +42,7 @@ const TopFive = () => {
             <h2 className='top__header'>Top 5 Losers</h2>
             <ul className='top__lul-cont'>
                {topLosers.map((loser, index) => (
-                  <li className='top__loser' key={index}>{loser.ticker}: ${loser.price} ({loser.change_percentage})</li>
+                  <li className='top__loser' key={index}><h3 className='top__ticker'>{loser.ticker}:</h3> ${loser.price} ({loser.change_percentage})</li>
                ))}
             </ul>
          </div>

@@ -4,7 +4,7 @@
 
 .calendar {
    max-width: 20rem;
-   margin: .7rem .5rem 2rem .5rem;
+   margin: 1rem 0;
    @include tablet {
       max-width: 50rem;
      
@@ -50,12 +50,11 @@
       }
    }
    &__day-cont {
-      display: flex;
-      width: 100%;
-      gap: .5rem;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin: 0 .5rem;
+      gap: .2rem;
       @include tablet {
-         display: grid;
-         grid-template-columns: repeat(7, 1fr);
          gap: .3125rem;
       }
    }
@@ -68,6 +67,7 @@
       width: 100%;
       grid-template-columns: repeat(7, .1fr);
       grid-gap: .125rem;
+      margin: 0 .5rem;
       @include tablet {
          grid-template-columns: repeat(7, 1fr);
          grid-gap: .3125rem;

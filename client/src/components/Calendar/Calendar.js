@@ -113,16 +113,16 @@ const Calendar = () => {
 
    return (
       <section className="calendar">
-         <div className="calendar__header-cont">
-            <button className="calendar__button" onClick={() => changeMonth(-1)}>&lt; Prev</button>
-               <h2 className="calendar__header">{selectedDate.toLocaleString("default", { month: "long", year: "numeric" })}</h2>
-            <button className="calendar__button" onClick={() => changeMonth(1)}>Next &gt;</button>
-         </div>
-         <div key="header" className="calendar__day-cont">{generateHeader()}</div>
-         <div className="calendar__grid">{generateCalendar()}</div>
-         {popupData && (
-            <Popup selectedDate={selectedDate} data={popupData} onClose={closePopup} />
-         )}
+            <div className="calendar__header-cont">
+               <button className="calendar__button" onClick={() => changeMonth(-1)}>&lt; Prev</button>
+                  <h2 className="calendar__header">{selectedDate.toLocaleString("default", { month: "long", year: "numeric" })}</h2>
+               <button className="calendar__button" onClick={() => changeMonth(1)}>Next &gt;</button>
+            </div>
+            <div key="header" className="calendar__day-cont">{generateHeader()}</div>
+            <div className="calendar__grid">{generateCalendar()}</div>
+            {popupData && (
+               <Popup selectedDate={selectedDate} data={popupData} onClose={closePopup} />
+            )}
       </section>
    );
 };

@@ -30,15 +30,26 @@ const IPO = () => {
     <section className="ipo">
       <h2 className="ipo__header">Upcoming IPOs</h2>
       {loading ? (<p>Loading IPO data...📈</p>) : (
-         <ul className="ipo__list">
+         <article className="ipo__main-cont">
          {ipoData.map((ipo, index) => (
             ipo.ipoDate && ipo.symbol && ipo.name && ipo.currency && ipo.exchange && (
-            <li key={index} className="ipo__list-item">
-               <strong>IPO Date:</strong> {ipo.ipoDate}, <strong>Symbol:</strong> {ipo.symbol}, <strong>Name:</strong> {ipo.name}
-            </li>
+            <div key={index} className="ipo__container">
+                <div className="ipo__item">
+                  <strong className="ipo__header-small">{ipo.name}</strong> 
+               </div>
+               <div className="ipo__item">
+                  <strong className="ipo__header-small">IPO Date: </strong> 
+                  <p className="ipo__description"> {ipo.ipoDate}</p>
+               </div>
+               <div className="ipo__item">
+                  <strong className="ipo__header-small">Symbol: </strong> 
+                  <p className="ipo__description"> {ipo.symbol}</p>
+               </div>
+              
+            </div>
             )
             ))}
-        </ul>
+        </article>
       )}
     </section>
   );

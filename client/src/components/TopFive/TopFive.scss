@@ -9,7 +9,7 @@
    border-radius: .625rem;
    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1); 
    height: fit-content;
-   margin-right: 1rem;
+   margin: 1rem .5rem;
 
    &__winner-cont {
       padding-bottom: 1rem;
@@ -17,7 +17,7 @@
    }
   
    &__header {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: $text-200;
       margin: .625rem 0;
    }
@@ -33,13 +33,25 @@
       padding: 0;
       margin: 0;
    }
-  
+   &__ticker {
+      color: $text-200;
+      margin: 0;
+      font-size: .9375rem;
+   }
    &__winner {
+      display: flex;
+      align-items: center;
+      font-size: .9375rem;
+      gap: .5rem;
       color: green;
       margin-bottom: .3125rem;
    }
   
    &__loser {
+      display: flex;
+      align-items: center;
+      font-size: .9375rem;
+      gap: .5rem;
       color: red; 
       margin-bottom: .3125rem;
    }

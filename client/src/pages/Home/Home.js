@@ -14,8 +14,8 @@ const Home = () => {
          <Futures />
          <Calendar />
          <div className="home__main">
-            <TopFive />
             <IPO />
+            <TopFive />
          </div>
       </main>
    );

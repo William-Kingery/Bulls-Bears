@@ -6,6 +6,7 @@
 .ticker {
     margin: .7rem .5rem;
     background-color: $bg-200;
+    align-items: center;
     @include tablet {
         margin: 1rem;
     }
