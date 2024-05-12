@@ -4,8 +4,11 @@
 
 
 .ticker {
-    margin: 1rem;
+    margin: .7rem .5rem;
     background-color: $bg-200;
+    @include tablet {
+        margin: 1rem;
+    }
 
     &__text {
         margin-right: 1.25rem;

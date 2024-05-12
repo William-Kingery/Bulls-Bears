@@ -12,11 +12,11 @@ const Home = () => {
          <Header />
          <Ticker />
          <Futures />
+         <Calendar />
          <div className="home__main">
             <TopFive />
-            <Calendar />
+            <IPO />
          </div>
-         <IPO />
       </main>
    );
 }

@@ -4,35 +4,34 @@
 
 
 .ipo {
-    padding: 1.25rem;
-    background: linear-gradient(to top, $bg-300, $bg-200);
-    border-radius: .625rem;
-    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1); 
-    height: fit-content;
-    margin-right: 1rem;
+   padding: 1.25rem;
+   background: linear-gradient(to bottom, $bg-300, $bg-200);
+   border-radius: .625rem;
+   box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1); 
+   height: fit-content;
+   margin-right: 1rem;
   
-    &__header {
+   &__header {
       font-size: 1.5rem;
       color: $text-200;
       margin: .625rem 0;
-    }
+   }
   
-    &__list {
+   &__list {
       list-style-type: none;
       padding: 0;
       margin: 0;
-    }
+   }
 
-    &__item {
-        margin-bottom: 0.5rem;
-        background-color: $bg-100;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1);
-  
-        strong {
-          margin-right: 0.5rem;
-        }
-    }
+   &__item {
+      margin-bottom: 0.5rem;
+      background-color: $bg-100;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1);
+      strong {
+         margin-right: 0.5rem;
+      }
+   }
     
 }
