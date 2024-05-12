@@ -43,8 +43,6 @@ const StockTicker = () => {
             ))}
          </marquee>
       </section>
-  
-
    )
 
 };

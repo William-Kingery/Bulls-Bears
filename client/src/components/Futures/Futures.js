@@ -24,56 +24,35 @@ const Futures = () => {
   if (!futuresData) {
    return <p>Loading...🫠</p>
    }
+
+   const determineColor = (open, close) => {
+      return parseFloat(close) > parseFloat(open) ? 'green' : 'red';
+   };
+   
    return (
       <section className='futures'>
          <div className='futures__main-cont'>
-         {Object.keys(futuresData).map((symbol) => {
+            {Object.keys(futuresData).map((symbol, index) => {
             const { values } = futuresData[symbol];
             if (values && values.length > 0) {
+               const { open, close, high } = values[0];
+               const highColor = determineColor(open, close);
+               const roundedHigh = parseFloat(high).toFixed(2);
                return (
-               <div className='futures__container' key={symbol}>
+               <div className='futures__container' key={index}>
                   <h3 className='futures__header'>{symbol}</h3>
-                  <p className='futures__price'>High: {values[0].high}</p>
-                  <p className='futures__price'>Low: {values[0].low}</p>
+                  <p className='futures__price' style={{ color: highColor }}>
+                     ${roundedHigh}
+                  </p>
                </div>
-            );}
-            })}
-         </div>
+              );
+            }
+          })}
+        </div>
       </section>
    );
-
+   
 };
 
 
 export default Futures
-
-
-
-
-
-
-
-
-
-// const indices = Object.values(futuresData);
-
-// if (indices.length === 0) {
-//   return <p>No data available</p>;
-// }
-
-// return (
-//    <section className="futures">
-//       <div className="futures__main-cont">
-//          {Object.keys(futuresData).map((key) => {
-//           const { meta, values } = futuresData[key];
-//          const highValue = values && values.length > 0 ? values[0].high : 'N/A';
-//          return (
-//             <div key={key} className="futures__container">
-//                <h3 className="futures__header">{meta.symbol}</h3>
-//                <p className="futures__price">High: {highValue}</p>
-//             </div>
-//          );
-//          })}
-//       </div>
-//    </section>
-// );
