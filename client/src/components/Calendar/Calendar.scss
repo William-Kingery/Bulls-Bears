@@ -3,32 +3,38 @@
 @use "../../styles/partials/Variables.scss" as *;
 
 .calendar {
-   max-width: 320px;
+   max-width: 20rem;
+   margin: .7rem .5rem 2rem .5rem;
    @include tablet {
       max-width: 50rem;
-      margin: 0rem auto 2rem auto;
+     
    }
    
    &__header-cont {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1rem;
+      align-items: center;
+      margin: .5rem .5rem;
    }
    &__header {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: .625rem;
    }
    &__button {
-      padding: 10px 20px;
-      font-size: 16px;
+      height: 2.5rem;
+      width: 50px;
+      font-size: .8125rem;
       font-weight: bold;
       text-transform: uppercase;
       color: $text-200;
       background-color: $primary-200;
       border: none;
-      border-radius: 6px;
+      border-radius: .375rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      @include tablet {
+         padding: .625rem 1.25rem;
+      }
       &:hover {
          background-color: $accent-200;
          color: $bg-100; 
@@ -40,40 +46,58 @@
       }
      
        &:active {
-         transform: translateY(1px); 
+         transform: translateY(.0625rem); 
       }
    }
    &__day-cont {
-      display: grid;
+      display: flex;
       width: 100%;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 5px;
+      gap: .5rem;
+      @include tablet {
+         display: grid;
+         grid-template-columns: repeat(7, 1fr);
+         gap: .3125rem;
+      }
+   }
+   &__day-header {
+      width: 2.5rem;
    }
   
    &__grid {
       display: grid;
       width: 100%;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 5px;
+      grid-template-columns: repeat(7, .1fr);
+      grid-gap: .125rem;
+      @include tablet {
+         grid-template-columns: repeat(7, 1fr);
+         grid-gap: .3125rem;
+      }
   }
    &__cell {
-      height: 55px;
-      width: 65px;
-      padding: 10px;
-      border: 1px solid #ccc;
+      height: 2.1875rem;
+      width: 2.5rem;
+      font-size: .6875rem;
+      border: .0625rem solid #ccc;
       background-color: $bg-100;
       text-align: center;
       overflow: hidden;
       cursor: pointer;
-      &:hover {
-         background-color: $primary-100;
-         box-shadow: 0 0 0 .5px rgba(0, 0, 0, 0.2); 
-         color: black;
+      @include tablet {
+         height: 3.4375rem;
+         width: 4.0625rem;
+         padding: .625rem;
+         font-size: 1rem;
       }
    }
+   &:hover {
+      background-color: $primary-100;
+      box-shadow: 0 0 0 .0313rem rgba(0, 0, 0, 0.2); 
+      color: black;
+   }
+   
    &__earning-sym {
       color: $text-200;
-      margin-top: .2rem;
+      margin: .5rem 0;
    }
    &__selected {
       background-color: $accent-200;
