@@ -11,6 +11,7 @@ const StockTicker = () => {
       const getStocks = async () => {
          try {
             const response = await axios.get(`${URL}home/stocks`);
+            console.log(response.data)
             setStocks(response.data);
          } catch (error) {
             console.error('Error fetching stocks:', error);
@@ -34,9 +35,7 @@ const StockTicker = () => {
             {stocks.map((stock, index) => (
             <span key={index}>
                {stock.T}: $
-               <span
-               className="ticker__text"
-               style={{ color: determineColor(stock.o, stock.c) }}>
+               <span className="ticker__text" style={{ color: determineColor(stock.o, stock.c) }}>
                {stock.h}
                </span>
             </span>

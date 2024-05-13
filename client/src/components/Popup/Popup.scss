@@ -16,33 +16,42 @@
 
    &__cont {
       background-color: $primary-200;
-      max-height: 37.5rem;
-      width: 30rem; 
-      padding: 1.25rem;
+      max-height: 25rem;
+      width: 15.3125rem;
+      margin-right: .5rem; 
+      padding: 1.5rem 1rem 1rem 1rem;
       border-radius: .3125rem;
       box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.2);
+      overflow: hidden;
    
    }
-   &__header {
+   &__header-cont {
       display: flex;
-      font-size: 1.5rem;
       justify-content: space-between;
       align-items: center;
       margin-bottom: .625rem;
-      color: $text-100;
+
+   }
+   &__header {
+      margin: 0;
+      font-size: 1.25rem;
+      color: $text-200;
    }
    &__button{
-      height: 35px;
-      width: 75px;
-      font-size: 16px;
+      height: 1.5625rem;
+      width: 3.4375rem;
+      font-size: .75rem;
       font-weight: bold;
-      text-transform: uppercase;
       color: $text-300;
       background-color: $accent-200;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      @include tablet {
+         height: 3.4375rem;
+         width: 4.6875rem;
+      }
       &:hover {
          background-color: $accent-100;
          color: $text-200; 
@@ -58,17 +67,33 @@
       }
    }
    &__key {
-      color: $text-100;
+      font-size: .75rem;
+      color: $text-200;
       font-weight: 700;
+      margin: .8rem 0 .2rem 0;
+      font-style: italic;
    }
    &__content-cont {
-      max-height: 25rem; 
-      overflow-y: auto;
+      max-height: 180px;
+      overflow-y: scroll;
       color: $text-200;
       background-color: $bg-200;
       padding-left: .5rem;
       padding-top: .5rem;
       border-radius: .3125rem;
+      @include tablet {
+         max-height: 25rem; 
+      }
+   }
+   &__symbol {
+      font-size: .875rem;
+      font-weight: 600;
+   }
+   &__name {
+      font-size: .875rem;
+   }
+   &__estimate {
+      font-size: .875rem;
    }
 }
  
