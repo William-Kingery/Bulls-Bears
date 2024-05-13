@@ -10,6 +10,12 @@ const Header = () => {
      setIsMenuOpen(!isMenuOpen);
    };
  
+
+   const handleLogout = () => {
+      sessionStorage.removeItem('token');
+      window.location.href = '/';
+    };
+
    return (
       <header className="header">
          <Link className="header__link" to={"/home"}>
@@ -24,7 +30,7 @@ const Header = () => {
             <ul className={`header__dropdown ${isMenuOpen ? "open" : "hidden"}`}>
                {page.pathname !== "/home" && <li className="header__drop-item"><Link className="header__item-link" to="/home">Home</Link></li>}
                {page.pathname !== "/news" && <li className="header__drop-item"><Link className="header__item-link" to="/news">News</Link></li>}
-               {page.pathname !== "/profile" && <li className="header__drop-item"><Link className="header__item-link" to="/profile">Profile</Link></li>}
+               <li className="header__drop-item"><a className="header__item-link" href="/" onClick={handleLogout}>Logout</a></li>
             </ul>
          </div>
       </header>

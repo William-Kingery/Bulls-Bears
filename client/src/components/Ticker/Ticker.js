@@ -21,13 +21,13 @@ const StockTicker = () => {
     
    }, []);
 
-   if (!stocks) {
-      return <p>Loading...🫠</p>
-   }
-
    const determineColor = (open, close) => {
       return open < close ? 'green' : 'red';
    };
+
+      if (!stocks) {
+      return <p>Loading...🫠</p>
+   }
   
    return (
       <section className='ticker'>
