@@ -10,6 +10,9 @@
    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1); 
    height: fit-content;
    margin: 1rem .5rem;
+   @include tablet {
+      margin-top: 1.2rem;
+   }
 
    &__winner-cont {
       padding-bottom: 1rem;

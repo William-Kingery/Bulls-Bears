@@ -37,6 +37,9 @@
    &__hamburger {
       cursor: pointer;
       padding-right: 1.5rem;
+      @include tablet {
+         padding-right: 3rem;
+      }
    }
  
    &__ham-line {
@@ -44,6 +47,9 @@
       height: .1875rem;
       background-color: $bg-100;
       margin: .25rem 0;
+      @include tablet {
+         width: 1.875rem;
+      }
    }
  
    &__dropdown {

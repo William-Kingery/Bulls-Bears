@@ -38,7 +38,7 @@ const indicesData = async () => {
   
    const API_KEY = process.env.TWELVE_API_KEY;
    try {
-   const response = await axios.get(`https://api.twelvedata.com/time_series?symbol=DJI,IXIC,GSPC,RUT,GOOG&interval=2h&outputsize=1&apikey=${API_KEY}`);
+   const response = await axios.get(`https://api.twelvedata.com/time_series?symbol=DJI,IXIC,GSPC,RUT,GOOG,TNX,NVDA&interval=2h&outputsize=1&apikey=${API_KEY}`);
    return response.data 
    } catch (error) {
       console.error('Error fetching data:', error);

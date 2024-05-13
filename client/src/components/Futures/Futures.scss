@@ -21,11 +21,12 @@
       border: .0625rem solid $accent-200;
       border-radius: .5rem;
       margin: 1rem .5rem 1rem 0;
+      width: 24vw;
       text-align: left;
       box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1); 
       transition: background-color 0.3s ease;
 		@include tablet {
-			height: 100px;
+			height: 55px;
 		}
    }
    &__container:hover {

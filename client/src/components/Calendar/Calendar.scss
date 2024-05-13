@@ -22,7 +22,7 @@
    }
    &__button {
       height: 2.5rem;
-      width: 50px;
+      width: 3.125rem;
       font-size: .8125rem;
       font-weight: bold;
       text-transform: uppercase;
@@ -33,7 +33,10 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
       @include tablet {
+         height: 3.125rem;
+         width: 4.6875rem;
          padding: .625rem 1.25rem;
+
       }
       &:hover {
          background-color: $accent-200;
@@ -55,7 +58,8 @@
       margin: 0 .5rem;
       gap: .2rem;
       @include tablet {
-         gap: .3125rem;
+         width: 100%;
+         gap: 7px;
       }
    }
    &__day-header {

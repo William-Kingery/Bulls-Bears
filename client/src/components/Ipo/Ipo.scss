@@ -12,6 +12,10 @@
    border-radius: .625rem;
    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1); 
    height: fit-content;
+   @include tablet {
+      margin-top: 1.2rem;
+      max-height: 21.1rem;
+   }
 
    &__header {
       font-size: 1.25rem;
@@ -19,6 +23,7 @@
       margin: 0 0 .5rem 1rem;
       @include tablet {
          font-size: 1.5rem;
+         margin: 1rem 0 1rem 1rem;
       }
    }
   
