@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Signin from '../../components/Signin/Signin';
+import Footer from '../../components/Footer/Footer'
 import './Login.scss';
 
 const Login = () => {
@@ -9,25 +10,24 @@ const Login = () => {
    const navigate = useNavigate();
 
    const handleSubmit = async (event) => {
-       event.preventDefault();
-       try {
-           const response = await axios.post(
-               "http://localhost:8080/user/login",
-               {
-                   email: event.target.email.value,
-                   password: event.target.password.value,
-               }
-           );
-           console.log(response.data);
-           sessionStorage.setItem("token", response.data.token);
-           navigate("/home");
-       } catch (error) {
-           setError("Something went wrong", error);
-       }
+      event.preventDefault();
+      try {
+         const response = await axios.post(
+            "http://localhost:8080/user/login",
+            {
+               email: event.target.email.value,
+               password: event.target.password.value,
+            }
+         );
+         console.log(response.data);
+         sessionStorage.setItem("token", response.data.token);
+         navigate("/home");
+      } catch (error) {
+         setError("Something went wrong", error);
+      }
    };
 
    return (
-    
       <main className="login">
          <header className="login__header-cont">
             <h1 className="login__title">Bulls & Bears</h1>
@@ -44,7 +44,7 @@ const Login = () => {
                Need an account? <Link className="login__signup-link" to="/signup">Sign up</Link>
             </p>
          </form>
-       
+         <Footer />
       </main>
      
    );

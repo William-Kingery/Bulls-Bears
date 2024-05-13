@@ -31,16 +31,16 @@ const StockTicker = () => {
   
    return (
       <section className='ticker'>
-         <marquee>
+         <div className='ticker__container'>
             {stocks.map((stock, index) => (
-            <span key={index}>
+            <span className='ticker__item' key={index}>
                {stock.T}: $
                <span className="ticker__text" style={{ color: determineColor(stock.o, stock.c) }}>
                {stock.h}
                </span>
             </span>
             ))}
-         </marquee>
+         </div>
       </section>
    )
 

@@ -7,10 +7,20 @@
     margin: .7rem .5rem;
     background-color: $bg-200;
     align-items: center;
+    overflow: hidden;
     @include tablet {
         margin: 1rem;
     }
-
+    &__container {
+        display: inline-block;
+        white-space: nowrap;
+        animation: ticker-scroll 1200s linear infinite;
+        animation-delay: -11s; 
+    }
+    &__item {
+        margin-right: 20px; 
+        display: inline-block;
+     }
     &__text {
         margin-right: 1.25rem;
         white-space: nowrap;
@@ -19,3 +29,11 @@
        
     }
 }
+@keyframes ticker-scroll {
+    0% {
+       transform: translateX(100%);
+    }
+    100% {
+       transform: translateX(-100%);
+    }
+ }

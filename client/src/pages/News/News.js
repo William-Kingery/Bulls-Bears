@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import Header from "../../components/Header/Header";
 import Ticker from "../../components/Ticker/Ticker";
@@ -11,7 +12,9 @@ import "./News.scss"
 const URL = 'http://localhost:8080/'
 
 const News = () => {
- 
+   const [user, setUser] = useState(null);
+   const [usersList, setUsersList] = useState(null);
+   const [failedAuth, setFailedAuth] = useState(false);
    const [newsData, setNewsData] = useState([]);
    const [loading, setLoading] = useState(true);
 
@@ -19,7 +22,9 @@ const News = () => {
       const getNewsData = async () => {
          try {
             const response = await axios.get(`${URL}news`);
+            console.log(response.data)
             setNewsData(response.data);
+            
             setLoading(false);
          } catch (error) {
          console.error('Error fetching news data:', error);
@@ -27,7 +32,52 @@ const News = () => {
       };
 
       getNewsData();
-  }, []);
+   }, []);
+
+   useEffect(() => {
+      const token = sessionStorage.getItem("token");
+
+      if (!token) {
+         setFailedAuth(true);
+     }
+
+     const authorizeUser = async () => {
+
+      try {
+         const response = await axios.get(
+             "http://localhost:8080/user/current",
+            { headers: { Authorization: `Bearer ${token}`} }
+            );
+         console.log(response.data);
+         setUser(response.data);
+         const usersRes = await axios.get("http://localhost:8080/user",
+             { headers: {Authorization: `Bearer ${token}`}}
+         );
+         setUsersList(usersRes.data);
+      } catch (error) {
+         console.log(error);
+         if (error.response && error.response.status === 401) {
+            setFailedAuth(true);
+         } else {
+            setFailedAuth(true);
+            console.error("Authentication failed:", error);
+         }
+         }
+      };
+
+      authorizeUser();
+   }, []);
+
+   if (failedAuth) {
+      return (
+         <main className="dashboard">
+            <p>You must be logged in to see this page.</p>
+            <p>
+               <Link to="/">Log in</Link>
+            </p>
+         </main>
+      );
+   }
 
    return (
       <main>

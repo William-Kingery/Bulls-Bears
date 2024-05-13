@@ -15,6 +15,9 @@
       justify-content: space-between;
       align-items: center;
       margin: .5rem .5rem;
+      @include tablet {
+         width: 99%;
+      }
    }
    &__header {
       text-align: center;
@@ -36,7 +39,6 @@
          height: 3.125rem;
          width: 4.6875rem;
          padding: .625rem 1.25rem;
-
       }
       &:hover {
          background-color: $accent-200;
@@ -45,7 +47,7 @@
      
        &:focus {
          outline: none;
-         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); 
+         box-shadow: 0 0 0 .0625rem rgba(0, 0, 0, 0.2); 
       }
      
        &:active {
@@ -59,7 +61,7 @@
       gap: .2rem;
       @include tablet {
          width: 100%;
-         gap: 7px;
+         gap: .4375rem;
       }
    }
    &__day-header {
@@ -92,16 +94,19 @@
          padding: .625rem;
          font-size: 1rem;
       }
-   }
-   &:hover {
+       &:hover {
       background-color: $primary-100;
       box-shadow: 0 0 0 .0313rem rgba(0, 0, 0, 0.2); 
       color: black;
+      }
    }
    
    &__earning-sym {
       color: $text-200;
       margin: .5rem 0;
+      @include tablet {
+         margin-top: 1rem;
+      }
    }
    &__selected {
       background-color: $accent-200;
