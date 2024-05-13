@@ -35,7 +35,6 @@ const News = () => {
          <Ticker />
          <Futures />
          <div className='shift'>
-            <TopFive />
             <section className='news'>
                {loading ? (
                <h3 className='news__loading'>Loading... 📈 📰</h3>
@@ -56,6 +55,7 @@ const News = () => {
                   </article>
                )}
             </section>
+            <TopFive />
          </div> 
       </main>
    )

@@ -2,76 +2,86 @@
 @use "../../styles/partials/Global.scss" as *;
 @use "../../styles/partials/Variables.scss" as *;
 
-.shift {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem;
+.shift .top-five {
+   display: flex;
+   justify-content: space-between;
+   margin: 1rem;
+   display: none;
+   
 }
 
-.news {
-    background-color: $bg-200; 
-  
 
-  &__loading {
-    font-size: 1.5rem;
-    text-align: center;
-    color: $text-100; 
-    margin-top: 1.25rem; 
-  }
+.news {
+   background-color: $bg-200; 
+   width: 100%;
+
+   &__loading {
+      font-size: 1.5rem;
+      text-align: center;
+      color: $text-100; 
+      margin-top: 1.25rem; 
+   }
   
-  &__main-container {
-    max-width: 42.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-  &__container {
-    width: 100%;
-    margin: 1rem;
-    background-color: $bg-200;
-    border-radius: .3125rem;
-  }
+   &__main-container {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      @include tablet {
+         max-width: 42.5rem;
+      }
+   }
+   &__container {
+      width: 100%;
+      margin: 1rem .5rem 0 .5rem;
+      padding-bottom: 1rem;
+     
+      border-bottom: .0625rem solid $accent-200;
+   }
   
-  &__item {
-    background-color: $bg-100;
-    border-radius: .5rem;
-    padding: 1.25rem;
-    box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1);
-    display: flex; 
-    flex-direction: column;
-  }
+   &__item {
+      background-color: $bg-100;
+      border-radius: .5rem;
+      padding: 1.25rem;
+      box-shadow: 0 .25rem .375rem rgba(0, 0, 0, 0.1);
+      display: flex; 
+      flex-direction: column;
+   }
   
-    &__header {
-    font-size: 1.3rem;
-    margin-bottom: .625rem;
-    color: $text-200;
-  }
+   &__header {
+      width: 95%;
+      font-size: 1.3rem;
+      color: $text-200;
+   }
   
-  &__header a {
-    color: $accent-200;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+   &__header a {
+      color: $accent-200;
+      text-decoration: none;
+      transition: color 0.3s;
+   }
   
-  &__header a:hover {
-    text-decoration: underline;
-    color: darken($accent-200, 10%);
-  }
+   &__header a:hover {
+      text-decoration: underline;
+      color: darken($accent-200, 10%);
+   }
   
-  &__summary {
-    font-size: 1rem;
-    margin-bottom: .9375rem;
-    color: $text-200; 
-  }
+   &__summary {
+      width: 95%;
+      font-size: 1rem;
+      margin-bottom: .9375rem;
+      color: $text-200; 
+   }
   
-  &__img {
-    width: 50%;
-    height: auto;
-    border-radius: .5rem;
-    margin-bottom: .9375rem;
-  }
+   &__img {
+      width: 50%;
+      height: auto;
+      border-radius: .5rem;
+      margin-bottom: .9375rem;
+   }
   
-  &__source {
-    font-size: 0.9rem;
-    color: $text-200; 
-  }
-};
+   &__source {
+      font-size: .75rem;
+      color: $text-200;
+      margin: 0; 
+   }
+}
