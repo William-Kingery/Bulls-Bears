@@ -13,6 +13,9 @@
 		overflow-y: auto;
       background: linear-gradient(to bottom, $bg-300, $bg-200);
 		margin: 0 .5rem;
+      @include tablet {
+         margin: 0 1rem;
+      }
    }
    &__container {
       display: flex;
@@ -26,8 +29,13 @@
       box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1); 
       transition: background-color 0.3s ease;
 		@include tablet {
-			height: 55px;
+			height: 60px;
+         width: 100px;
+
 		}
+      @include desktop {
+
+      }
    }
    &__container:hover {
       background: linear-gradient(to right, $primary-200, $accent-100);

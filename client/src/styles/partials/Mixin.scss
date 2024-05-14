@@ -1,10 +1,5 @@
 @use './Variables.scss' as *;
 
-@mixin mobile-l {
-    @media screen and (min-width: $mobile) {
-        @content;
-    }
-}
 
 @mixin tablet {
     @media screen and (min-width: $tablet) {

@@ -16,6 +16,9 @@
       margin-top: 1.2rem;
       max-height: 21.1rem;
    }
+   @include desktop {
+      width: 300px;
+   }
 
    &__header {
       font-size: 1.25rem;

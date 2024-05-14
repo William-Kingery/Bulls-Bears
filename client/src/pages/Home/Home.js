@@ -67,10 +67,12 @@ const Home = () => {
          <Header />
          <Ticker />
          <Futures />
-         <Calendar />
-         <div className="home__main">
-            <IPO />
-            <TopFive />
+         <div className="home__1280">
+            <Calendar />
+            <div className="home__main">
+               <IPO />
+               <TopFive />
+            </div>
          </div>
          <Footer />
       </main>

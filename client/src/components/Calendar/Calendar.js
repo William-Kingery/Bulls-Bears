@@ -120,6 +120,7 @@ const Calendar = () => {
             </div>
             <div key="header" className="calendar__day-cont">{generateHeader()}</div>
             <div className="calendar__grid">{generateCalendar()}</div>
+            <p className="calendar__instructions">Click on date to see Company scheduled earnings</p>
             {popupData && (
                <Popup selectedDate={selectedDate} data={popupData} onClose={closePopup} />
             )}

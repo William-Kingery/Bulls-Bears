@@ -2,12 +2,24 @@
 @use "../../styles/partials/Global.scss" as *;
 @use "../../styles/partials/Variables.scss" as *;
 
+.home__1280 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include desktop {
+        flex-direction: row;
+        align-items: start;
+        gap: 50px;
+    }
+
+}
 
 .home__main {
-    
     @include tablet {
         display: flex;
         margin: 0
     }
- 
+    @include desktop {
+        flex-direction: column;
+    }
 }
