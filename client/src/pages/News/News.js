@@ -4,7 +4,6 @@ import axios from 'axios';
 import Header from "../../components/Header/Header";
 import Ticker from "../../components/Ticker/Ticker";
 import Futures from "../../components/Futures/Futures";
-import TopFive from '../../components/TopFive/TopFive';
 import Footer from '../../components/Footer/Footer';
 import bulls_and_bears from "../../assests/images/bulls_and_bearsIMG.jpeg";
 import "./News.scss"
@@ -23,7 +22,6 @@ const News = () => {
       const getNewsData = async () => {
          try {
             const response = await axios.get(`${URL}news`);
-            console.log(response.data)
             setNewsData(response.data);
             
             setLoading(false);

@@ -19,7 +19,6 @@ const Login = () => {
                password: event.target.password.value,
             }
          );
-         console.log(response.data);
          sessionStorage.setItem("token", response.data.token);
          navigate("/home");
       } catch (error) {
@@ -46,7 +45,6 @@ const Login = () => {
          </form>
          <Footer />
       </main>
-     
    );
 }
 

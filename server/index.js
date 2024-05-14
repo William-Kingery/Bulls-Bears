@@ -15,13 +15,13 @@ app.use(express.json());
 
 
 app.route("/user")
-  app.use("/user", user);
-  app.use('/home', home);
-  app.use('/news', news);
+   app.use("/user", user);
+   app.use('/home', home);
+   app.use('/news', news);
 
 
 
 app.listen(PORT || 5050, () => {
-    console.log(`running on ${PORT || 5050}`);
+   console.log(`running on ${PORT || 5050}`);
 });
 

@@ -4,7 +4,7 @@
 
 
 .ipo {
-   max-height: 300px;
+   max-height: 18.75rem;
    overflow-y: scroll;
    margin: .5rem .5rem;
    padding: 1rem .5rem;
@@ -17,7 +17,7 @@
       max-height: 21.1rem;
    }
    @include desktop {
-      width: 300px;
+      width: 18.75rem;
    }
 
    &__header {

@@ -16,7 +16,6 @@ const IPO = () => {
          const [symbol, name, ipoDate, priceRangeLow, priceRangeHigh, currency, exchange] = line.split(',');
             return { symbol, name, ipoDate, priceRangeLow, priceRangeHigh, currency, exchange };
          });
-         console.log('Parsed IPO Data:', parsedData); 
          setIPOData(parsedData);
          setLoading(false);
       } catch (error) {
@@ -26,32 +25,31 @@ const IPO = () => {
       fetchIPOData();
    }, []);
 
-  return (
-    <section className="ipo">
-      <h2 className="ipo__header">Upcoming IPOs</h2>
-      {loading ? (<p>Loading IPO data...📈</p>) : (
-         <article className="ipo__main-cont">
-         {ipoData.map((ipo, index) => (
-            ipo.ipoDate && ipo.symbol && ipo.name && ipo.currency && ipo.exchange && (
-            <div key={index} className="ipo__container">
-                <div className="ipo__item">
-                  <strong className="ipo__header-small">{ipo.name}</strong> 
+   return (
+      <section className="ipo">
+         <h2 className="ipo__header">Upcoming IPOs</h2>
+         {loading ? (<p>Loading IPO data...📈</p>) : (
+            <article className="ipo__main-cont">
+            {ipoData.map((ipo, index) => (
+               ipo.ipoDate && ipo.symbol && ipo.name && ipo.currency && ipo.exchange && (
+               <div key={index} className="ipo__container">
+                  <div className="ipo__item">
+                     <strong className="ipo__header-small">{ipo.name}</strong> 
+                  </div>
+                  <div className="ipo__item">
+                     <strong className="ipo__header-small">IPO Date: </strong> 
+                     <p className="ipo__description"> {ipo.ipoDate}</p>
+                  </div>
+                  <div className="ipo__item">
+                     <strong className="ipo__header-small">Symbol: </strong> 
+                     <p className="ipo__description"> {ipo.symbol}</p>
+                  </div>
                </div>
-               <div className="ipo__item">
-                  <strong className="ipo__header-small">IPO Date: </strong> 
-                  <p className="ipo__description"> {ipo.ipoDate}</p>
-               </div>
-               <div className="ipo__item">
-                  <strong className="ipo__header-small">Symbol: </strong> 
-                  <p className="ipo__description"> {ipo.symbol}</p>
-               </div>
-              
-            </div>
-            )
-            ))}
-        </article>
-      )}
-    </section>
+               )
+               ))}
+         </article>
+         )}
+      </section>
   );
 };
 

@@ -13,7 +13,7 @@
     &__input {
         padding-left: .5rem;
         background-color: $bg-100;
-        border: 1px solid $accent-200;
+        border: .0625rem solid $accent-200;
         border-radius: .3125rem;
         height: 1.25rem;
         @include desktop {

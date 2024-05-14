@@ -25,7 +25,6 @@ const Calendar = () => {
                return { symbol, name, reportDate, fiscalDateEnding, estimate, currency };
              });
             setEarnings(parsedData);
-            console.log(parsedData)
           } catch (error) {
             console.error("Error fetching earnings:", error);
          }
@@ -107,7 +106,7 @@ const Calendar = () => {
             </div>
          </div>
       );
-   }
+      }
       return calendar;
    };
 

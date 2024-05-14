@@ -5,7 +5,6 @@ import knexConfig from '../knexfile.js';
 import { newsData } from "../controller/apidata.js";
 
 const router = express.Router();
-const myknex = knex(knexConfig);
 
 
 
@@ -23,11 +22,3 @@ export default router;
 
 
 
-// router.get("/", authorize, async (_req, res) => {
-//    try {
-//        const user = await myknex.select("*").from("user");
-//        res.json(user);
-//    } catch (err) {
-//        res.status(500).json({ message: "Unable to retrieve users data" });
-//    }
-// });

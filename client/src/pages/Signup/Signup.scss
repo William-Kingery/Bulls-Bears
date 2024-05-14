@@ -50,9 +50,9 @@
         background-color: $accent-100;
         border: none;
         color: $text-200;
-        border-radius: 5px;
+        border-radius: .3125rem;
         width: 55%;
-        height: 25px;
+        height: 1.5625rem;
         cursor: pointer;
         @include desktop {
             width: 13.5rem;

@@ -11,7 +11,6 @@ const StockTicker = () => {
       const getStocks = async () => {
          try {
             const response = await axios.get(`${URL}home/stocks`);
-            console.log(response.data)
             setStocks(response.data);
          } catch (error) {
             console.error('Error fetching stocks:', error);
@@ -25,9 +24,9 @@ const StockTicker = () => {
       return open < close ? 'green' : 'red';
    };
 
-      if (!stocks) {
+   if (!stocks) {
       return <p>Loading...🫠</p>
-   }
+   };
   
    return (
       <section className='ticker'>
@@ -43,7 +42,6 @@ const StockTicker = () => {
          </div>
       </section>
    )
-
 };
 
 export default StockTicker 

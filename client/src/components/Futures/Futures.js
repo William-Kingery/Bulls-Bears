@@ -10,19 +10,18 @@ const Futures = () => {
    useEffect(() => {
       const getData = async () => {
       try {
-        const response = await axios.get(`${URL}home/indices`);
-        setFuturesData(response.data);
-        console.log(response.data)
+         const response = await axios.get(`${URL}home/indices`);
+         setFuturesData(response.data);
       } catch (error) {
-        console.error('Error fetching futures data:', error);
+          console.error('Error fetching futures data:', error);
       }
       };
 
       getData();
    }, []);
 
-  if (!futuresData) {
-   return <p>Loading...🫠</p>
+   if (!futuresData) {
+      return <p>Loading...🫠</p>
    }
 
    const determineColor = (open, close) => {
@@ -51,8 +50,11 @@ const Futures = () => {
         </div>
       </section>
    );
-   
 };
 
 
 export default Futures
+
+
+
+

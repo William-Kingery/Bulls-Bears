@@ -17,10 +17,10 @@ const snatchData = async () => {
       }));
       const shuffledStocks = shuffleArray(selectedStocks);
       const randomStocks = shuffledStocks.slice(0, 500);
-       return randomStocks;
+      return randomStocks;
    } catch (error) {
-       console.error('Error retrieving stock data:', error);
-       throw error;
+      console.error('Error retrieving stock data:', error);
+      throw error;
    }
 };
 
@@ -28,8 +28,8 @@ const snatchData = async () => {
 const shuffleArray = (arr) => {
    const shuffled = [...arr];
    for (let i = shuffled.length - 1; i > 0; i--) {
-       const j = Math.floor(Math.random() * (i + 1));
-       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
    }
    return shuffled;
 };
@@ -87,6 +87,7 @@ const newsData = async () => {
       throw error;   
    }
 };
+
 const winnersLosersData = async () => {
    const API_KEY = process.env.ALPHA_API_KEY;
 
@@ -97,7 +98,7 @@ const winnersLosersData = async () => {
       price,
       change_amount,
       change_percentage
-     })).slice(0, 5);
+      })).slice(0, 5);
  
       const topLosers = response.data.top_losers.map(({ ticker, price, change_amount, change_percentage }) => ({
       ticker,

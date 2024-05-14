@@ -29,8 +29,8 @@
       box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1); 
       transition: background-color 0.3s ease;
 		@include tablet {
-			height: 60px;
-         width: 100px;
+			height: 3.75rem;
+         width: 6.25rem;
 
 		}
       @include desktop {

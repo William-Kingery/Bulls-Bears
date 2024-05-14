@@ -59,7 +59,7 @@
       color: $text-300;
       background-color: $accent-200;
       border: none;
-      border-radius: 6px;
+      border-radius: .375rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
       @include tablet {
@@ -74,11 +74,11 @@
      
        &:focus {
          outline: none;
-         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); 
+         box-shadow: 0 0 0 .0625rem rgba(0, 0, 0, 0.2); 
       }
      
        &:active {
-         transform: translateY(1px); 
+         transform: translateY(.0625rem); 
       }
    }
    &__key {
@@ -92,7 +92,7 @@
       }
    }
    &__content-cont {
-      max-height: 180px;
+      max-height: 11.25rem;
       overflow-y: scroll;
       color: $text-200;
       background-color: $bg-200;

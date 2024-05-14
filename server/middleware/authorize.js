@@ -30,16 +30,4 @@ const authorize = (req, res, next) => {
 export default authorize;
 
 
-// const bearerTokenString = req.headers.authorization
-// console.log(bearerTokenString)
-// const splitBearerToken = bearerTokenString.split(' ')
-// const token = splitBearerToken[1]
 
-// try {
-//   const payload = jwt.verify(token, JWT_KEY)
-//   req.decoded = payload
-//   console.log(payload)
-//   next()
-// } catch (error) {
-//   res.sendStatus(401)
-// }

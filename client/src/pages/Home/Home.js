@@ -20,21 +20,18 @@ const Home = () => {
 
       if (!token) {
          setFailedAuth(true);
-     }
-     console.log(token)
-     const authorizeUser = async () => {
+      }
+      const authorizeUser = async () => {
       try {
          const response = await axios.get(
-             "http://localhost:8080/user/current",
+            "http://localhost:8080/user/current",
             { headers: { Authorization: `Bearer ${token}`} }
-            );
-         console.log(response.data);
+         );
          setUser(response.data);
 
          const usersRes = await axios.get("http://localhost:8080/user",
-             { headers: {Authorization: `Bearer ${token}`}}
+            { headers: {Authorization: `Bearer ${token}`}}
          );
-         console.log(usersRes.data)
          setUsersList(usersRes.data);
       } catch (error) {
          console.log(error);
@@ -63,7 +60,6 @@ const Home = () => {
 
    return (
       <main>
-         {console.log(failedAuth)}
          <Header />
          <Ticker />
          <Futures />
