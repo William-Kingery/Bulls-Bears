@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Signin from "../../components/Signin/Signin";
+import Footer from "../../components/Footer/Footer";
 import './Signup.scss';
 
 const Signup = () => {
@@ -76,6 +77,7 @@ const Signup = () => {
                   Have an account? <Link className="signup__login-link" to="/">Log in</Link>
                </p>
             </form>
+            <Footer />
         </main>
     );
 }

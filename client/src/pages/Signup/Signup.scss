@@ -17,10 +17,17 @@
         background-color: $primary-400;
         width: 100%;
         color: $text-300;
+        @include desktop {
+            font-size: 1.4rem;
+        }
+       
     }
     &__header {
         color: $text-200;
         margin-top: 2rem;
+        @include desktop {
+            font-size: 3rem
+        }
     }
     &__form {
         display: flex;
@@ -30,9 +37,12 @@
         border: solid .0625rem $accent-200;
         border-radius: .625rem;
         background-color: $bg-200;
-        
         width: 15rem;
         margin: 3.5rem 0;
+        @include desktop {
+            margin: 4rem;
+            width: 18.75rem;
+        }
     
     }
       
@@ -44,10 +54,16 @@
         width: 55%;
         height: 25px;
         cursor: pointer;
+        @include desktop {
+            width: 13.5rem;
+            height: 1.875rem;
+            font-size: 1.125rem;
+        }
     }
     &__login {
         color: $text-200;
         margin: 1.5rem 0;
+        font-size: 1.125rem;
     }
     &__login-link {
         color: $accent-200;

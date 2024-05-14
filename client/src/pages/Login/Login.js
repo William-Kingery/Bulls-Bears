@@ -33,10 +33,10 @@ const Login = () => {
             <h1 className="login__title">Bulls & Bears</h1>
          </header>
          <form className="login__form" onSubmit={handleSubmit}>
-            <h1 className="login__header">Log in</h1>
+            <h1 className="login__header">Log In</h1>
             <Signin type="text" name="email" label="Email" />
             <Signin type="password" name="password" label="Password" />
-            <button className="login__button">Log in</button>
+            <button className="login__button">Log In</button>
             <div className="login__message-cont">
                {error && <div className="login__message">There was issue with Email or Password</div>}
             </div>
