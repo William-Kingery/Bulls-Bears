@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import Ticker from "../../components/Ticker/Ticker";
 import Futures from "../../components/Futures/Futures";
 import TopFive from '../../components/TopFive/TopFive';
+import Footer from '../../components/Footer/Footer';
 import bulls_and_bears from "../../assests/images/bulls_and_bearsIMG.jpeg";
 import "./News.scss"
 
@@ -84,7 +85,6 @@ const News = () => {
          <Header />
          <Ticker />
          <Futures />
-         <div className='shift'>
             <section className='news'>
                {loading ? (
                <h3 className='news__loading'>Loading... 📈 📰</h3>
@@ -105,8 +105,7 @@ const News = () => {
                   </article>
                )}
             </section>
-            <TopFive />
-         </div> 
+         <Footer />
       </main>
    )
 }
