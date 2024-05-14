@@ -22,13 +22,15 @@ const Signup = () => {
                 }
             );
             if (response) {
+                alert('You Have Successfully Signed up for Bulls & Bears!');
                 setSuccess(true);
                 setError("");
                 event.target.reset();
-                navigate("/home"); 
+                navigate("/"); 
             }
  
         } catch (err) {
+            alert('There was an issue signing up for Bulls & Bears.');
             console.log(err.response.data);
             setError(err.response.data);
             setSuccess(false);

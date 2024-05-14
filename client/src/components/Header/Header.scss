@@ -27,7 +27,26 @@
          padding-left: 1.875rem;
       }
    }
- 
+   &__countdown {
+      display: none;
+      @include tablet {
+         display: contents;
+         display: flex;
+         margin-right: 5rem;
+      }
+   }
+   &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   &__clockheader {
+      margin: .5rem 0;
+   }
+   &__time {
+      font-family: 'Courier New', Courier, monospace;
+   }
    &__menu {
       position: relative;
       display: flex;
