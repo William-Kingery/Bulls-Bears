@@ -1,18 +1,40 @@
-# Getting Started with Create React App
+## Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Run npm install
+- create ".env" file in server
 
-## Available Scripts
+## ENV file
 
-In the project directory, you can run:
+    PORT=8080
+    DB_HOST=127.0.0.1
+    DB_NAME=bulls_and_bears
+    DB_USER=root
+    DB_PASSWORD="your MySql P/W"
+    JWT_KEY=e31e6b8a748b8bf91bbb650cbc576ea77cba0f8dd3f886b67da72fba8d453f5e
+    POLY_API_KEY=eu8K1BFo96WCPC15v4pqdzp3br4b6goP
+    ALPHA_API_KEY=B0PS7V42ZH0UGBBA
+    TWELVE_API_KEY=5d0981849fad4e3f95ec389425f2e0fe
 
-### `npm start`
+## In the project directory for both server and client, you can run:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 'npm start'
+- Runs the app in the development mode.\ Open http://localhost:3000 to view it in your browser.
+- server will run on http://localhost:8080
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API limitations
+
+# Alpha Vantage API
+
+    - 75 API request per minute and 15 min delayed market data
+
+# twelvedata API
+
+    - 55 API request per minute
+    - No daily or monthly request limit
+
+# polygon API
+
+    - 5 API calls per min
 
 ### `npm test`
 
@@ -45,26 +67,44 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Getting Started with Create React App
+
+- Run npm install
+- create ".env" file in server
+
+## ENV file
+
+    PORT=8080
+    DB_HOST=127.0.0.1
+    DB_NAME=bulls_and_bears
+    DB_USER=root
+    DB_PASSWORD="your MySql P/W"
+    JWT_KEY=e31e6b8a748b8bf91bbb650cbc576ea77cba0f8dd3f886b67da72fba8d453f5e
+    POLY_API_KEY=eu8K1BFo96WCPC15v4pqdzp3br4b6goP
+    ALPHA_API_KEY=B0PS7V42ZH0UGBBA
+    TWELVE_API_KEY=5d0981849fad4e3f95ec389425f2e0fe
+
+## In the project directory for both server and client, you can run:
+
+- 'npm start'
+- Runs the app in the development mode.\ Open http://localhost:3000 to view it in your browser.
+- server will run on http://localhost:8080
+
+## API limitations
+
+# Alpha Vantage API
+
+    - 75 API request per minute and 15 min delayed market data
+
+# twelvedata API
+
+    - 55 API request per minute
+    - No daily or monthly request limit
+
+# polygon API
+
+    - 5 API calls per min
