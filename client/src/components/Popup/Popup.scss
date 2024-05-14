@@ -23,6 +23,14 @@
       border-radius: .3125rem;
       box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.2);
       overflow: hidden;
+      @include tablet {
+         max-height: 31.25rem;
+         width: 21.5625rem;
+      }
+      @include desktop {
+         width: 35rem;
+         padding: 2rem;
+      }
    
    }
    &__header-cont {
@@ -36,6 +44,12 @@
       margin: 0;
       font-size: 1.25rem;
       color: $text-200;
+      @include tablet {
+         font-size: 1.5rem;
+      }
+      @include desktop {
+         font-size: 2rem;
+      }
    }
    &__button{
       height: 1.5625rem;
@@ -51,6 +65,7 @@
       @include tablet {
          height: 3.4375rem;
          width: 4.6875rem;
+         font-size: 1rem;
       }
       &:hover {
          background-color: $accent-100;
@@ -72,6 +87,9 @@
       font-weight: 700;
       margin: .8rem 0 .2rem 0;
       font-style: italic;
+      @include tablet {
+         font-size: .9rem;
+      }
    }
    &__content-cont {
       max-height: 180px;
@@ -88,12 +106,21 @@
    &__symbol {
       font-size: .875rem;
       font-weight: 600;
+      @include tablet {
+         font-size: 1rem;
+      }
    }
    &__name {
       font-size: .875rem;
+      @include tablet {
+         font-size: 1rem;
+      }
    }
    &__estimate {
       font-size: .875rem;
+      @include tablet {
+         font-size: 1rem;
+      }
    }
 }
  
