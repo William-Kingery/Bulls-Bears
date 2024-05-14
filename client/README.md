@@ -23,18 +23,17 @@
 
 ## API limitations
 
-# Alpha Vantage API
+    # Alpha Vantage API
+     - 75 API request per minute and 15 min delayed market data
 
-    - 75 API request per minute and 15 min delayed market data
+    # twelvedata API
+        - 55 API request per minute
+        - No daily or monthly request limit
 
-# twelvedata API
+    # polygon API
+        - 5 API calls per min
 
-    - 55 API request per minute
-    - No daily or monthly request limit
-
-# polygon API
-
-    - 5 API calls per min
+### You will need to Create a profile when first logging in.
 
 ### `npm test`
 
