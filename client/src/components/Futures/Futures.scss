@@ -33,9 +33,6 @@
          width: 100px;
 
 		}
-      @include desktop {
-
-      }
    }
    &__container:hover {
       background: linear-gradient(to right, $primary-200, $accent-100);

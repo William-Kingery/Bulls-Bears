@@ -51,12 +51,12 @@
          color: $bg-100; 
       }
      
-       &:focus {
+      &:focus {
          outline: none;
          box-shadow: 0 0 0 .0625rem rgba(0, 0, 0, 0.2); 
       }
      
-       &:active {
+      &:active {
          transform: translateY(.0625rem); 
       }
    }
@@ -139,6 +139,7 @@
    &__instructions {
       font-size: .625rem;
       margin-left: .5rem;
+      margin-top: 1rem;
       @include tablet {
          font-size: 12px;
          margin-left: 1rem;

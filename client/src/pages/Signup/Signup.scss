@@ -39,8 +39,11 @@
         background-color: $bg-200;
         width: 15rem;
         margin: 3.5rem 0;
+        @include tablet {
+            margin: 3.5rem;
+        }
         @include desktop {
-            margin: 4rem;
+            margin: 4.75rem;
             width: 18.75rem;
         }
     
